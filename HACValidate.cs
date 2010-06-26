@@ -3,10 +3,14 @@
  * ================
  * Name: HACValidate.cs
  * Description: Form that does the necessary map scanning
- *
- * Copyright 2010 (C) Souless Productions
+ * 
+ * This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 Unported License.
+ * View copy of License at: http://creativecommons.org/licenses/by-sa/3.0/
+ * 
+ * Copyright (C) 2010 Souless Productions
  * 
  */
+
 
 using System;
 using System.Collections.Generic;

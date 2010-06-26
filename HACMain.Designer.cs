@@ -1,4 +1,16 @@
-﻿namespace HAC2Beta2
+﻿/* 
+ * Halo Anticheat 2
+ * ================
+ * Name: HACMain.Designer.cs
+ * Description: Form Design for HACMain
+ *
+ * This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 Unported License.
+ * View copy of License at: http://creativecommons.org/licenses/by-sa/3.0/
+ * 
+ * Copyright (C) 2010 Souless Productions
+ * 
+ */
+namespace HAC2Beta2
 {
     partial class HACMain
     {

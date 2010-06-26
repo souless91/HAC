@@ -1,1 +1,12 @@
 C:\Users\souless\Documents\Works\C#\HAC2Beta2\HAC2Beta2\bin\Debug\Halo Anticheat.exe.config
+C:\Users\souless\Documents\Works\C#\HAC2Beta2\HAC2Beta2\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\souless\Documents\Works\C#\HAC2Beta2\HAC2Beta2\obj\Debug\HAC2Beta2.HACLogin.resources
+C:\Users\souless\Documents\Works\C#\HAC2Beta2\HAC2Beta2\obj\Debug\HAC2Beta2.HACMain.resources
+C:\Users\souless\Documents\Works\C#\HAC2Beta2\HAC2Beta2\obj\Debug\HAC2Beta2.HACValidate.resources
+C:\Users\souless\Documents\Works\C#\HAC2Beta2\HAC2Beta2\obj\Debug\HAC2Beta2.Properties.Resources.resources
+C:\Users\souless\Documents\Works\C#\HAC2Beta2\HAC2Beta2\obj\Debug\ResGen.read.1.tlog
+C:\Users\souless\Documents\Works\C#\HAC2Beta2\HAC2Beta2\obj\Debug\ResGen.write.1.tlog
+C:\Users\souless\Documents\Works\C#\HAC2Beta2\HAC2Beta2\bin\Debug\Halo Anticheat.exe
+C:\Users\souless\Documents\Works\C#\HAC2Beta2\HAC2Beta2\bin\Debug\Halo Anticheat.pdb
+C:\Users\souless\Documents\Works\C#\HAC2Beta2\HAC2Beta2\obj\Debug\Halo Anticheat.exe
+C:\Users\souless\Documents\Works\C#\HAC2Beta2\HAC2Beta2\obj\Debug\Halo Anticheat.pdb

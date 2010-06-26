@@ -1,0 +1,362 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{35119ED4-E11E-4D9C-81FB-C9A16D193F91}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HAC2Beta2</RootNamespace>
+    <AssemblyName>Halo Anticheat</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <StartupObject>
+    </StartupObject>
+    <TargetFrameworkSubset>
+    </TargetFrameworkSubset>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Accessibility" />
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Design" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ListViewColumnSorter.cs" />
+    <Compile Include="ListViewNF.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Gamespy\GameSpy.cs" />
+    <Compile Include="HACLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HACLogin.Designer.cs">
+      <DependentUpon>HACLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HACMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HACMain.Designer.cs">
+      <DependentUpon>HACMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HACValidate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HACValidate.Designer.cs">
+      <DependentUpon>HACValidate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ObjectListView\Adornments.cs" />
+    <Compile Include="ObjectListView\Attributes.cs" />
+    <Compile Include="ObjectListView\CellEditors.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ObjectListView\Comparers.cs" />
+    <Compile Include="ObjectListView\DataListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ObjectListView\Decorations.cs" />
+    <Compile Include="ObjectListView\DragSource.cs" />
+    <Compile Include="ObjectListView\DropSink.cs" />
+    <Compile Include="ObjectListView\Events.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ObjectListView\FastObjectListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ObjectListView\Filters.cs" />
+    <Compile Include="ObjectListView\Generator.cs" />
+    <Compile Include="ObjectListView\GlassPanelForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ObjectListView\Groups.cs" />
+    <Compile Include="ObjectListView\HeaderControl.cs" />
+    <Compile Include="ObjectListView\Munger.cs" />
+    <Compile Include="ObjectListView\NativeMethods.cs" />
+    <Compile Include="ObjectListView\ObjectListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ObjectListView\ObjectListView.DesignTime.cs" />
+    <Compile Include="ObjectListView\Overlays.cs" />
+    <Compile Include="ObjectListView\Renderers.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ObjectListView\Styles.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ObjectListView\ToolTipControl.cs" />
+    <Compile Include="ObjectListView\TreeListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ObjectListView\TypedObjectListView.cs" />
+    <Compile Include="ObjectListView\VirtualGroups.cs" />
+    <Compile Include="ObjectListView\VirtualListDataSource.cs" />
+    <Compile Include="ObjectListView\VirtualObjectListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PNGBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="HACLogin.resx">
+      <DependentUpon>HACLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HACMain.resx">
+      <DependentUpon>HACMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HACValidate.resx">
+      <DependentUpon>HACValidate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HACLogin_TxtBoxBG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HACLogin_FormBG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HACLogin_Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HACLogin_HandleBG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HACGlobal_CloseButton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HACLogin_ConnectBTN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HACValidate_HandleBG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HACValidate_FormBG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HACValidate_FrontProg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HACValidate_BackProg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HACMain_FormBG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HACMain_HandleBG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HACMain-MenuChat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HACMain-MenuChatH.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HACMain-MenuChatI.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HACMain-MenuHome.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HACMain-MenuHomeH.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HACMain-MenuHomeI.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HACMain-MenuServers.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HACMain-MenuServersH.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HACMain-MenuServersI.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MasterChiefIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HACMain-GametypeCTF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HACMain-GametypeKing.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HACMain-GametypeOddball.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HACMain-GametypeRace.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HACMain-GametypeSlayer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HACMain-MapBattlecreek.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HACMain-MapBloodgulch.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HACMain-MapBoardingaction.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HACMain-MapChillout.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HACMain-MapChiron.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HACMain-MapDamnation.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HACMain-MapDangercanyon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HACMain-MapDeathisland.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HACMain-MapDerelict.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HACMain-MapGephyrophobia.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HACMain-MapHangemhigh.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HACMain-MapIceFields.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HACMain-MapInfinity.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HACMain-MapLongest.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HACMain-MapPrisoner.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HACMain-MapRatrace.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HACMain-MapSidewinder.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HACMain-MapTimberland.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HACMain-MapWizard.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ObjectListView\CustomDictionary.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

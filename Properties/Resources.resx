@@ -1,0 +1,260 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="HACMain-MenuChat" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HACMain-MenuChat.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HACLogin_Logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HACLogin_Logo.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HACMain-MenuHomeI" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HACMain-MenuHomeI.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HACMain_HandleBG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HACMain_HandleBG.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HACMain-MenuHomeH" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HACMain-MenuHomeH.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HACMain-MenuHome" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HACMain-MenuHome.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MasterChiefIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MasterChiefIcon.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HACMain-MenuServers" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HACMain-MenuServers.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HACValidate_FrontProg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HACValidate_FrontProg.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HACMain-MenuChatI" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HACMain-MenuChatI.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HACLogin_ConnectBTN" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HACLogin_ConnectBTN.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HACLogin_HandleBG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HACLogin_HandleBG.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HACMain-MenuServersI" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HACMain-MenuServersI.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HACMain-GametypeSlayer" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HACMain-GametypeSlayer.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HACGlobal_CloseButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HACGlobal_CloseButton.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HACMain-GametypeOddball" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HACMain-GametypeOddball.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HACValidate_FormBG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HACValidate_FormBG.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HACValidate_BackProg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HACValidate_BackProg.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HACLogin_TxtBoxBG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HACLogin_TxtBoxBG.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HACLogin_FormBG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HACLogin_FormBG.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HACMain-GametypeCTF" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HACMain-GametypeCTF.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HACMain_FormBG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HACMain_FormBG.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HACMain-MenuServersH" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HACMain-MenuServersH.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HACMain-GametypeKing" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HACMain-GametypeKing.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HACMain-GametypeRace" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HACMain-GametypeRace.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HACMain-MenuChatH" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HACMain-MenuChatH.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HACValidate_HandleBG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HACValidate_HandleBG.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="HACMain-MapBattlecreek" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HACMain-MapBattlecreek.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HACMain-MapBloodgulch" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HACMain-MapBloodgulch.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HACMain-MapBoardingaction" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HACMain-MapBoardingaction.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HACMain-MapChillout" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HACMain-MapChillout.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HACMain-MapChiron" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HACMain-MapChiron.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HACMain-MapDamnation" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HACMain-MapDamnation.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HACMain-MapDangercanyon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HACMain-MapDangercanyon.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HACMain-MapDeathisland" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HACMain-MapDeathisland.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HACMain-MapDerelict" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HACMain-MapDerelict.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HACMain-MapGephyrophobia" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HACMain-MapGephyrophobia.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HACMain-MapHangemhigh" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HACMain-MapHangemhigh.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HACMain-MapIceFields" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HACMain-MapIceFields.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HACMain-MapInfinity" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HACMain-MapInfinity.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HACMain-MapLongest" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HACMain-MapLongest.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HACMain-MapPrisoner" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HACMain-MapPrisoner.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HACMain-MapRatrace" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HACMain-MapRatrace.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HACMain-MapSidewinder" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HACMain-MapSidewinder.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HACMain-MapTimberland" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HACMain-MapTimberland.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HACMain-MapWizard" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HACMain-MapWizard.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+</root>

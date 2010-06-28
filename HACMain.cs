@@ -27,11 +27,14 @@ using System.Net.NetworkInformation;
 using System.Net.Sockets;
 using System.Threading;
 using System.Drawing.Imaging;
+using System.Diagnostics;
 
 namespace HAC2Beta2
 {
     public partial class HACMain : Form
     {
+
+
         #region CuteStuff Here
         // Collection of filters to filter out server browser
         private Hashtable Filters = new Hashtable();
@@ -84,6 +87,7 @@ namespace HAC2Beta2
             int nWidthEllipse, 
             int nHeightEllipse
         );
+
         #endregion
 
         public HACMain()
@@ -127,6 +131,7 @@ namespace HAC2Beta2
             WindowTitle.Text = "   " + Text;
 
             // Initialize ServerBrowserList in new thread
+            olvColumn2.Renderer = new ImagesRenderer();
             Thread t = new Thread(new ThreadStart(LoadServers));
             t.Start();
 
@@ -329,7 +334,7 @@ namespace HAC2Beta2
             checkBox10.Checked = false;
         }
 
-        private void ServerBrowser_SelectServer(object sender, MouseEventArgs e)
+        private void ServerBrowser_SelectServer(object sender, EventArgs e)
         {
             // If we're in the middle of updating a server's information, gtfo
             if (midProcess) return;
@@ -446,6 +451,10 @@ namespace HAC2Beta2
 
         private void ResetSearch_Click(object sender, EventArgs e)
         {
+            Filters.Clear();
+            VersionCombo.SelectedIndex = 0;
+            GametypeCombo.SelectedIndex = 0;
+            MapCombo.SelectedIndex = 0;
             ServerBrowserList.ModelFilter = null;
         }
 
@@ -454,33 +463,43 @@ namespace HAC2Beta2
         #region Beautiful Code
         private void LoadServers()
         {
-            // Load the masterlist into our global variable
-            masterlist = GameSpy.GetMasterServerList("halor", "e4Rd9J", GameSpy.EncType.Advanced2, "");
-
-            // Bad workaround here - we constantly attempt to get masterlist on failure
-            if (masterlist.Length < 0) { LoadServers(); return; }
-
             WarningLabel.Text = "Acquiring server list information...";
 
-            // Threadpooling logic here - List of ManualResetEvents
-            List<ManualResetEvent> events = new List<ManualResetEvent>();
-            
-            // Go through all the IP addresses in masterlist and add them to threadpool
-            for (int i = 0; i < masterlist.Length; i++)
+            Process p = new Process();
+            p.StartInfo.UseShellExecute = false;
+            p.StartInfo.RedirectStandardOutput = true;
+            System.IO.Directory.SetCurrentDirectory(System.IO.Path.GetDirectoryName(Application.ExecutablePath));
+            p.StartInfo.FileName = "gslist.exe";
+            p.StartInfo.Arguments = " -X \\hostname\\gamevariant\\gametype\\numplayers\\maxplayers\\mapname\\password\\gamever -n halor";
+            p.StartInfo.CreateNoWindow = true;
+            p.Start();
+            string output = p.StandardOutput.ReadToEnd();
+            p.WaitForExit();
+            string[] ResultServers = output.Split('\n');
+            for (int i = 0; i < ResultServers.Length; i++)
             {
-                ThreadPoolObj obj = new ThreadPoolObj();
-                obj.ObjectID = i;
-                obj.signal = new ManualResetEvent(false);
-                events.Add(obj.signal);
-
-                WaitCallback callback = new WaitCallback(LoadServerData);
-
-                // We queue the obj and c# takes care of the rest
-                ThreadPool.QueueUserWorkItem(callback, obj);
+                string[] parseMe = ResultServers[i].Split('\\');
+                if (parseMe.Length > 15 && parseMe[8] != "" && parseMe[4] != "")
+                {
+                    Server temp = new Server();
+                    temp.addr = parseMe[0].Substring(0, parseMe[0].Length - 1).Replace(' ', ':');
+                    temp.Name = parseMe[2].Replace((char)(byte)1, '\b');
+                    temp.Map = parseMe[12];
+                    temp.GameName = parseMe[4];
+                    temp.Gametype = parseMe[6];
+                    temp.AspectGametype = parseMe[6] + " - " + parseMe[4];
+                    temp.MaxPlayers = parseMe[10];
+                    temp.AspectPlayers = parseMe[8] + " / " + parseMe[10];
+                    temp.pass = parseMe[14].Substring(0, 1);
+                    temp.AspectPassword = (temp.pass == "1") ? Properties.Resources.lock_1_ : null;
+                    temp.Version = parseMe[16];
+                    playercounter += Convert.ToInt32(parseMe[8]+" ");
+                    Servers[temp.addr] = temp;
+                    ServerBrowserList.AddObject(Servers[temp.addr]);
+                }
+                PlayerCount.Text = playercounter + "";
+                ServerCount.Text = i + "";
             }
-
-            // Let's wait until the threadpool is empty, then we can move on with this method
-            WaitForAll(events.ToArray());
             WarningLabel.Text = "";
         }
 
@@ -512,6 +531,7 @@ namespace HAC2Beta2
             public string Version;
             public string AspectPlayers;
             public string AspectGametype;
+            public Image AspectPassword;
 
             public Server()
             {
@@ -577,15 +597,18 @@ namespace HAC2Beta2
 
             public Boolean Find(string query)
             {
-                if (Name.Contains(query)) return true;
-                if (Map.Contains(query)) return true;
-                if (Gametype.Contains(query)) return true;
-                if (GameName.Contains(query)) return true;
-                if (Version.Contains(query)) return true;
-                for (int i = 0; i < Players.Length; i++)
+                if (0 <= Name.IndexOf(query, StringComparison.InvariantCultureIgnoreCase)) return true;
+                if (0 <= Map.IndexOf(query, StringComparison.InvariantCultureIgnoreCase)) return true;
+                if (0 <= Gametype.IndexOf(query, StringComparison.InvariantCultureIgnoreCase)) return true;
+                if (0 <= GameName.IndexOf(query, StringComparison.InvariantCultureIgnoreCase)) return true;
+                if (0 <= Version.IndexOf(query, StringComparison.InvariantCultureIgnoreCase)) return true;
+                if (Players != null)
                 {
-                    if (Players[i][0].Contains(query))
-                        return true;
+                    for (int i = 0; i < Players.Length; i++)
+                    {
+                        if (Players[i][0].Contains(query))
+                            return true;
+                    }
                 }
                 return false;
             }
@@ -611,90 +634,6 @@ namespace HAC2Beta2
             }
         }
 
-        // The almighty ThreadPoolObj class object
-        private class ThreadPoolObj
-        {
-            public int ObjectID;
-            public ManualResetEvent signal;
-        }
-
-        private bool WaitForAll(ManualResetEvent[] events)
-        {
-            bool result = false;
-            try
-            {
-                if (events != null)
-                {
-                    for (int i = 0; i < events.Length; i++)
-                    {
-                        events[i].WaitOne(250);
-                        PlayerCount.Text = playercounter + "";
-                        ServerCount.Text = (i + 1) + "/" + events.Length;
-                    }
-                    result = true;
-                }
-            }
-            catch
-            {
-                result = false;
-            }
-            return result;
-        }
-
-        /// <summary>
-        /// A thread-pooled method that will query all servers in masterlist
-        /// </summary>
-        /// <param name="block">Must be a ThreadPoolObj class object</param>
-        private void LoadServerData(object block)
-        {
-            try
-            {
-                ThreadPoolObj obj = block as ThreadPoolObj;
-                System.Net.IPEndPoint ipaddress = masterlist[obj.ObjectID];
-                UdpClient udp = new UdpClient();
-                // This is the data you send to a halo server - the query string
-                byte[] sendBytes4 = { 254, 253, 0, 119, 106, 157, 157, 255, 255, 255, 255 };
-
-                // Send Data
-                udp.Send(sendBytes4, sendBytes4.Length, ipaddress);
-
-                // We don't wanna wait forever for a reply - so lets do this asynchronously
-                var asyncResult = udp.BeginReceive(null, null);
-
-                // Set TimeToLive for 250ms (you could say Aussie servers won't show up in US clients)
-                asyncResult.AsyncWaitHandle.WaitOne(TimeSpan.FromMilliseconds(250));
-
-                // Recieve data
-                byte[] receiveBytes = udp.EndReceive(asyncResult, ref ipaddress);
-
-                // Make it readable
-                string returnData = Encoding.ASCII.GetString(receiveBytes, 0, receiveBytes.Length);
-
-                // Data must have \0 byte, for parsing, and must be a public server (openplaying)
-                if (returnData.IndexOf('\0') != -1 && returnData.Split('\0')[16] == "openplaying")
-                {
-                    // Counting players
-                    playercounter += Convert.ToInt32(returnData.Split('\0')[20]);
-
-                    // Lets make a temporary Server class object
-                    Server temp = new Server(ipaddress.ToString(), returnData);
-
-                    // Add the temp to Servers Collection
-                    Servers.Add(ipaddress.ToString(), temp);
-
-                    // Add the temp to ServerBrowserList as well
-                    ServerBrowserList.AddObject( Servers[ipaddress.ToString()] );
-                }
-                udp.Close();
-                // Important - so the WaitForAll can move on with life
-                obj.signal.Set();
-            }
-            catch
-            {
-
-            }
-        }
-
         /// <summary>
         /// Filters the ServerBrowserList to required filters
         /// </summary>
@@ -716,11 +655,19 @@ namespace HAC2Beta2
                         if (property == "Custom") return ((Server)x).Find(Filters["Custom"] as string);
 
                         // For normal filters (version, gametype, and map) we can check directly
-                        if (((Server)x).GetVar(property) != Filters[property] as string) return false;
+                        if(0 > ((Server)x).GetVar(property).IndexOf(Filters[property] as string, StringComparison.InvariantCultureIgnoreCase)) return false;
                     }
                     return true;
                 });
             }
+        }
+        private System.Net.IPEndPoint StringToEndPoint(string ipport)
+        {
+            // split ip:port
+            string[] addrparts = ipport.Split(':');
+
+            // return an IPAddress
+            return new System.Net.IPEndPoint(System.Net.IPAddress.Parse(addrparts[0]), Convert.ToInt32(addrparts[1]));
         }
 
         /// <summary>
@@ -736,7 +683,7 @@ namespace HAC2Beta2
             byte[] sendBytes4 = { 254, 253, 0, 119, 106, 157, 157, 255, 255, 255, 255 };
 
             // Borrow the Gamespy's StringToEndPoint method and convert our address to an EndPoint
-            System.Net.IPEndPoint ipaddress = GameSpy.StringToEndPoint(ServerBrowserList.Items[ServerBrowserList.SelectedIndices[0]].Text);
+            System.Net.IPEndPoint ipaddress = StringToEndPoint(ServerBrowserList.Items[ServerBrowserList.SelectedIndices[0]].Text);
 
             // Send Data
             udp.Send(sendBytes4, sendBytes4.Length, ipaddress);
@@ -753,7 +700,7 @@ namespace HAC2Beta2
                 // Since there is no real "Update" method for Lists - we must remove and add them manually
                 Server temp = new Server(ipaddress.ToString(), returnData);
                 Servers[ipaddress.ToString()] = temp;
-                ServerBrowserList.RemoveObject(Servers[ipaddress.ToString()]);
+                ServerBrowserList.RemoveObject(ServerBrowserList.Items[ServerBrowserList.SelectedIndices[0]]);
                 ServerBrowserList.AddObject(temp);
                 ServerBrowserList.SelectObject(temp);
 

@@ -375,6 +375,13 @@ namespace HAC2Beta2.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap lock_1_ {
+            get {
+                object obj = ResourceManager.GetObject("lock[1]", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap MasterChiefIcon {
             get {
                 object obj = ResourceManager.GetObject("MasterChiefIcon", resourceCulture);

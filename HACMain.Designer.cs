@@ -80,12 +80,12 @@ namespace HAC2Beta2
             this.GametypeCombo = new System.Windows.Forms.ComboBox();
             this.VersionCombo = new System.Windows.Forms.ComboBox();
             this.ServerBrowserList = new HAC2Beta2.ObjectListView();
-            this.olvColumn1 = new HAC2Beta2.OLVColumn();
-            this.olvColumn2 = new HAC2Beta2.OLVColumn();
-            this.olvColumn3 = new HAC2Beta2.OLVColumn();
-            this.olvColumn4 = new HAC2Beta2.OLVColumn();
-            this.olvColumn5 = new HAC2Beta2.OLVColumn();
-            this.olvColumn6 = new HAC2Beta2.OLVColumn();
+            this.olvColumn1 = ((HAC2Beta2.OLVColumn)(new HAC2Beta2.OLVColumn()));
+            this.olvColumn2 = ((HAC2Beta2.OLVColumn)(new HAC2Beta2.OLVColumn()));
+            this.olvColumn3 = ((HAC2Beta2.OLVColumn)(new HAC2Beta2.OLVColumn()));
+            this.olvColumn4 = ((HAC2Beta2.OLVColumn)(new HAC2Beta2.OLVColumn()));
+            this.olvColumn5 = ((HAC2Beta2.OLVColumn)(new HAC2Beta2.OLVColumn()));
+            this.olvColumn6 = ((HAC2Beta2.OLVColumn)(new HAC2Beta2.OLVColumn()));
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.GametypePicture = new System.Windows.Forms.PictureBox();
             this.MapPicture = new System.Windows.Forms.PictureBox();
@@ -153,9 +153,9 @@ namespace HAC2Beta2
             this.MenuHAC.Size = new System.Drawing.Size(103, 23);
             this.MenuHAC.TabIndex = 19;
             this.MenuHAC.TabStop = false;
-            this.MenuHAC.MouseLeave += new System.EventHandler(this.MenuHAC_MouseLeave);
             this.MenuHAC.Click += new System.EventHandler(this.MenuHAC_Click);
             this.MenuHAC.MouseEnter += new System.EventHandler(this.MenuHAC_MouseEnter);
+            this.MenuHAC.MouseLeave += new System.EventHandler(this.MenuHAC_MouseLeave);
             // 
             // MenuServers
             // 
@@ -166,9 +166,9 @@ namespace HAC2Beta2
             this.MenuServers.Size = new System.Drawing.Size(103, 23);
             this.MenuServers.TabIndex = 19;
             this.MenuServers.TabStop = false;
-            this.MenuServers.MouseLeave += new System.EventHandler(this.MenuServers_MouseLeave);
             this.MenuServers.Click += new System.EventHandler(this.MenuServers_Click);
             this.MenuServers.MouseEnter += new System.EventHandler(this.MenuServers_MouseEnter);
+            this.MenuServers.MouseLeave += new System.EventHandler(this.MenuServers_MouseLeave);
             // 
             // MenuChat
             // 
@@ -179,9 +179,9 @@ namespace HAC2Beta2
             this.MenuChat.Size = new System.Drawing.Size(103, 23);
             this.MenuChat.TabIndex = 20;
             this.MenuChat.TabStop = false;
-            this.MenuChat.MouseLeave += new System.EventHandler(this.MenuChat_MouseLeave);
             this.MenuChat.Click += new System.EventHandler(this.MenuChat_Click);
             this.MenuChat.MouseEnter += new System.EventHandler(this.MenuChat_MouseEnter);
+            this.MenuChat.MouseLeave += new System.EventHandler(this.MenuChat_MouseLeave);
             // 
             // Tabbings
             // 
@@ -626,7 +626,7 @@ namespace HAC2Beta2
             this.ServerBrowserList.UseFiltering = true;
             this.ServerBrowserList.UseTranslucentSelection = true;
             this.ServerBrowserList.View = System.Windows.Forms.View.Details;
-            this.ServerBrowserList.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.ServerBrowser_SelectServer);
+            this.ServerBrowserList.SelectedIndexChanged += new System.EventHandler(this.ServerBrowser_SelectServer);
             // 
             // olvColumn1
             // 
@@ -788,17 +788,17 @@ namespace HAC2Beta2
             // ServerCount
             // 
             this.ServerCount.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ServerCount.Location = new System.Drawing.Point(695, 51);
+            this.ServerCount.Location = new System.Drawing.Point(721, 51);
             this.ServerCount.Name = "ServerCount";
-            this.ServerCount.Size = new System.Drawing.Size(66, 23);
+            this.ServerCount.Size = new System.Drawing.Size(47, 23);
             this.ServerCount.TabIndex = 10;
-            this.ServerCount.Text = "0/0";
+            this.ServerCount.Text = "0";
             this.ServerCount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // ServersLbl
             // 
             this.ServersLbl.AutoSize = true;
-            this.ServersLbl.Location = new System.Drawing.Point(651, 55);
+            this.ServersLbl.Location = new System.Drawing.Point(678, 55);
             this.ServersLbl.Name = "ServersLbl";
             this.ServersLbl.Size = new System.Drawing.Size(43, 13);
             this.ServersLbl.TabIndex = 22;
@@ -807,7 +807,7 @@ namespace HAC2Beta2
             // PlayersLbl
             // 
             this.PlayersLbl.AutoSize = true;
-            this.PlayersLbl.Location = new System.Drawing.Point(567, 55);
+            this.PlayersLbl.Location = new System.Drawing.Point(587, 55);
             this.PlayersLbl.Name = "PlayersLbl";
             this.PlayersLbl.Size = new System.Drawing.Size(41, 13);
             this.PlayersLbl.TabIndex = 23;
@@ -816,7 +816,7 @@ namespace HAC2Beta2
             // PlayerCount
             // 
             this.PlayerCount.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PlayerCount.Location = new System.Drawing.Point(603, 51);
+            this.PlayerCount.Location = new System.Drawing.Point(629, 51);
             this.PlayerCount.Name = "PlayerCount";
             this.PlayerCount.Size = new System.Drawing.Size(43, 23);
             this.PlayerCount.TabIndex = 24;

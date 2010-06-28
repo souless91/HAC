@@ -45,14 +45,8 @@ namespace HAC2Beta2
         // Collection of gametype pictures for server browsing
         private Hashtable GTPictures = new Hashtable();
 
-        // Collection of servers - filled up by Gamespy master list and pushed to ServerBrowserList
+        // Collection of servers - filled up by Gamespy master list and pushed to QuickServerBrowser
         private Hashtable Servers = new Hashtable();
-
-        // Boolean to hold frozen server updates
-        private Boolean midProcess = false;
-
-        // Selected Index of ServerBrowserList
-        private int selNdx;
 
         // Current Tab
         private int currentTab = 0;
@@ -63,8 +57,7 @@ namespace HAC2Beta2
         // Total player count - acquired from querying servers in the master list
         private int playercounter = 0;
 
-        // The masterlist - an array of IPs
-        private System.Net.IPEndPoint[] masterlist;
+        private Boolean UpdatingProcessing = false;
 
         // Improved custom window handle (moving form around screen)
         public const int WM_NCLBUTTONDOWN = 0xA1;
@@ -130,8 +123,7 @@ namespace HAC2Beta2
 
             WindowTitle.Text = "   " + Text;
 
-            // Initialize ServerBrowserList in new thread
-            olvColumn2.Renderer = new ImagesRenderer();
+            // Initialize QuickServerBrowser in new thread
             Thread t = new Thread(new ThreadStart(LoadServers));
             t.Start();
 
@@ -334,30 +326,16 @@ namespace HAC2Beta2
             checkBox10.Checked = false;
         }
 
-        private void ServerBrowser_SelectServer(object sender, EventArgs e)
+
+        private void QuickServerBrowser_Click(object sender, EventArgs e)
         {
-            // If we're in the middle of updating a server's information, gtfo
-            if (midProcess) return;
-
-            // If there are no servers in list, gtfo
-            if (ServerBrowserList.SelectedIndices.Count < 1) return;
-
-            // If they select the same damn server over and over again, gtfo
-            if (ServerBrowserList.SelectedIndices[0] == selNdx) return;
-
-            // Show the cute details group
-            NameDetail.Visible = true;
-            PlayersDetail.Visible = true;
-            GameNameDetail.Visible = true;
-            VersionDetail.Visible = true;
-            selNdx = ServerBrowserList.SelectedIndices[0]; // Update current index
-            midProcess = true; // Turn on midprocess flag
-
+            if (UpdatingProcessing) return;
+            UpdatingProcessing = true;
             // Update Server Information in new thread
             Thread t = new Thread(new ThreadStart(UpdateServer));
             t.Start();
         }
-
+        
         private void SearchButton_Click(object sender, EventArgs e)
         {
             // Clear Search Filter
@@ -372,8 +350,8 @@ namespace HAC2Beta2
             {
                 // Add search Filter - and show message if query is empty
                 Filters.Add("Custom", SearchTextBox.Text);
-                
-                //ServerBrowserList.ModelFilter = new TextMatchFilter(ServerBrowserList, SearchTextBox.Text);
+
+                //QuickServerBrowser.ModelFilter = new TextMatchFilter(QuickServerBrowser, SearchTextBox.Text);
             }
             // Update the List
             UpdateFilters();
@@ -455,7 +433,7 @@ namespace HAC2Beta2
             VersionCombo.SelectedIndex = 0;
             GametypeCombo.SelectedIndex = 0;
             MapCombo.SelectedIndex = 0;
-            ServerBrowserList.ModelFilter = null;
+            //QuickServerBrowser.ModelFilter = null;
         }
 
         #endregion
@@ -495,11 +473,18 @@ namespace HAC2Beta2
                     temp.Version = parseMe[16];
                     playercounter += Convert.ToInt32(parseMe[8]+" ");
                     Servers[temp.addr] = temp;
-                    ServerBrowserList.AddObject(Servers[temp.addr]);
+                    GlacialComponents.Controls.GLItem someitem = QuickServerBrowser.Items.Add("");
+                    someitem.SubItems[0].Text = temp.pass;
+                    someitem.SubItems[1].Text = temp.Name;
+                    someitem.SubItems[2].Text = temp.Map;
+                    someitem.SubItems[3].Text = temp.AspectPlayers;
+                    someitem.SubItems[4].Text = temp.AspectGametype;
+                    //QuickServerBrowser.AddObject(Servers[temp.addr] as Server);
                 }
                 PlayerCount.Text = playercounter + "";
                 ServerCount.Text = i + "";
             }
+
             WarningLabel.Text = "";
         }
 
@@ -559,7 +544,8 @@ namespace HAC2Beta2
                     Players[i][2] = arr[loc]; loc++;
                     Players[i][3] = arr[loc]; loc++;
                 }
-                AspectPlayers = (Players.Length < 10) ? "0" + Players.Length + "/" + MaxPlayers : Players.Length + "/" + MaxPlayers;
+                AspectPlayers = (Players.Length < 10) ? "0" + Players.Length : Players + "";
+                AspectPlayers +=  (MaxPlayers.Length < 10) ? " / 0" + MaxPlayers : " / "+ MaxPlayers;
                 AspectGametype = Gametype + " - " + GameName;
             }
             public string GetVar(string something)
@@ -635,30 +621,18 @@ namespace HAC2Beta2
         }
 
         /// <summary>
-        /// Filters the ServerBrowserList to required filters
+        /// Filters the QuickServerBrowser to required filters
         /// </summary>
         private void UpdateFilters()
         {
             if (Filters.Count < 1)
             {
                 // If all filters are removed, or not set, then clear filters (show everything)
-                ServerBrowserList.ModelFilter = null;
+                //QuickServerBrowser.ModelFilter = null;
             }
             else
             {
                 // A delegated method that returns true/false, a custom filter we can write
-                ServerBrowserList.ModelFilter = new ModelFilter(delegate(object x)
-                {
-                    foreach (string property in Filters.Keys)
-                    {
-                        // We have to do a special function for search queries
-                        if (property == "Custom") return ((Server)x).Find(Filters["Custom"] as string);
-
-                        // For normal filters (version, gametype, and map) we can check directly
-                        if(0 > ((Server)x).GetVar(property).IndexOf(Filters[property] as string, StringComparison.InvariantCultureIgnoreCase)) return false;
-                    }
-                    return true;
-                });
             }
         }
         private System.Net.IPEndPoint StringToEndPoint(string ipport)
@@ -671,11 +645,18 @@ namespace HAC2Beta2
         }
 
         /// <summary>
-        /// Updates Server information - must have a single selected index in ServerBrowserList
+        /// Updates Server information - must have a single selected index in QuickServerBrowser
         /// </summary>
         private void UpdateServer()
         {
-            if (ServerBrowserList.SelectedIndices.Count != 1) return;
+            if (UpdatingProcessing==false) return; 
+           // if (QuickServerBrowser.SelectedIndices.Count != 1) return;
+
+            NameDetail.Text = "Loading...";
+            NameDetail.Visible = true;
+            PlayersDetail.Visible = true;
+            GameNameDetail.Visible = true;
+            VersionDetail.Visible = true;
 
             UdpClient udp = new UdpClient();
 
@@ -683,7 +664,7 @@ namespace HAC2Beta2
             byte[] sendBytes4 = { 254, 253, 0, 119, 106, 157, 157, 255, 255, 255, 255 };
 
             // Borrow the Gamespy's StringToEndPoint method and convert our address to an EndPoint
-            System.Net.IPEndPoint ipaddress = StringToEndPoint(ServerBrowserList.Items[ServerBrowserList.SelectedIndices[0]].Text);
+            System.Net.IPEndPoint ipaddress = StringToEndPoint(/*QuickServerBrowser.Items[QuickServerBrowser.SelectedIndices[0]].Text*/"");
 
             // Send Data
             udp.Send(sendBytes4, sendBytes4.Length, ipaddress);
@@ -700,9 +681,7 @@ namespace HAC2Beta2
                 // Since there is no real "Update" method for Lists - we must remove and add them manually
                 Server temp = new Server(ipaddress.ToString(), returnData);
                 Servers[ipaddress.ToString()] = temp;
-                ServerBrowserList.RemoveObject(ServerBrowserList.Items[ServerBrowserList.SelectedIndices[0]]);
-                ServerBrowserList.AddObject(temp);
-                ServerBrowserList.SelectObject(temp);
+               // QuickServerBrowser.RefreshObject(Servers[ipaddress.ToString()] as Server);
 
                 // Update server details
                 MapPicture.Image = MapPictures[temp.Map.ToLower()] as Bitmap;
@@ -711,8 +690,8 @@ namespace HAC2Beta2
                 GamenameTxt.Text = temp.Gametype + " - " + temp.GameName;
                 PlayersTxt.Text = temp.Players.Length + "/" + temp.MaxPlayers;
                 VersionTxt.Text = temp.Version;
-                midProcess = false; // we're not busy anymore, so turn that flag off
             }
+            UpdatingProcessing = false;
             udp.Close();
         }
         #endregion

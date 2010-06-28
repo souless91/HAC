@@ -186,7 +186,6 @@ namespace HAC2Beta2
             // 
             this.WindowTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.WindowTitle.ForeColor = System.Drawing.Color.Black;
-            this.WindowTitle.Image = global::HAC2Beta2.Properties.Resources.HACLogin_HandleBG;
             this.WindowTitle.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.WindowTitle.Location = new System.Drawing.Point(2, 2);
             this.WindowTitle.Name = "WindowTitle";
@@ -201,7 +200,7 @@ namespace HAC2Beta2
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.BackgroundImage = global::HAC2Beta2.Properties.Resources.HACLogin_FormBG;
+            this.BackgroundImage = global::HAC2Beta2.Properties.Resources.HAC2Login_FormBG;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(252, 330);
             this.Controls.Add(this.CloseButton);

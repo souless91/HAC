@@ -60,6 +60,13 @@ namespace HAC2Beta2.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap HAC2Login_FormBG {
+            get {
+                object obj = ResourceManager.GetObject("HAC2Login_FormBG", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap HACGlobal_CloseButton {
             get {
                 object obj = ResourceManager.GetObject("HACGlobal_CloseButton", resourceCulture);

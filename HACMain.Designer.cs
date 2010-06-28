@@ -40,6 +40,11 @@ namespace HAC2Beta2
         /// </summary>
         private void InitializeComponent()
         {
+            GlacialComponents.Controls.GLColumn glColumn1 = new GlacialComponents.Controls.GLColumn();
+            GlacialComponents.Controls.GLColumn glColumn2 = new GlacialComponents.Controls.GLColumn();
+            GlacialComponents.Controls.GLColumn glColumn3 = new GlacialComponents.Controls.GLColumn();
+            GlacialComponents.Controls.GLColumn glColumn4 = new GlacialComponents.Controls.GLColumn();
+            GlacialComponents.Controls.GLColumn glColumn5 = new GlacialComponents.Controls.GLColumn();
             this.CloseButton = new System.Windows.Forms.PictureBox();
             this.WindowTitle = new System.Windows.Forms.Label();
             this.MenuHAC = new System.Windows.Forms.PictureBox();
@@ -79,13 +84,6 @@ namespace HAC2Beta2
             this.checkBox11 = new System.Windows.Forms.CheckBox();
             this.GametypeCombo = new System.Windows.Forms.ComboBox();
             this.VersionCombo = new System.Windows.Forms.ComboBox();
-            this.ServerBrowserList = new HAC2Beta2.ObjectListView();
-            this.olvColumn1 = ((HAC2Beta2.OLVColumn)(new HAC2Beta2.OLVColumn()));
-            this.olvColumn2 = ((HAC2Beta2.OLVColumn)(new HAC2Beta2.OLVColumn()));
-            this.olvColumn3 = ((HAC2Beta2.OLVColumn)(new HAC2Beta2.OLVColumn()));
-            this.olvColumn4 = ((HAC2Beta2.OLVColumn)(new HAC2Beta2.OLVColumn()));
-            this.olvColumn5 = ((HAC2Beta2.OLVColumn)(new HAC2Beta2.OLVColumn()));
-            this.olvColumn6 = ((HAC2Beta2.OLVColumn)(new HAC2Beta2.OLVColumn()));
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.GametypePicture = new System.Windows.Forms.PictureBox();
             this.MapPicture = new System.Windows.Forms.PictureBox();
@@ -103,6 +101,7 @@ namespace HAC2Beta2
             this.PlayersLbl = new System.Windows.Forms.Label();
             this.PlayerCount = new System.Windows.Forms.Label();
             this.WarningLabel = new System.Windows.Forms.Label();
+            this.QuickServerBrowser = new GlacialComponents.Controls.GlacialList();
             ((System.ComponentModel.ISupportInitialize)(this.CloseButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MenuHAC)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MenuServers)).BeginInit();
@@ -112,7 +111,6 @@ namespace HAC2Beta2
             this.groupBox1.SuspendLayout();
             this.ServersPage.SuspendLayout();
             this.filtering.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ServerBrowserList)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GametypePicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MapPicture)).BeginInit();
@@ -438,8 +436,8 @@ namespace HAC2Beta2
             // 
             // ServersPage
             // 
+            this.ServersPage.Controls.Add(this.QuickServerBrowser);
             this.ServersPage.Controls.Add(this.filtering);
-            this.ServersPage.Controls.Add(this.ServerBrowserList);
             this.ServersPage.Controls.Add(this.groupBox2);
             this.ServersPage.Location = new System.Drawing.Point(4, 22);
             this.ServersPage.Name = "ServersPage";
@@ -585,83 +583,6 @@ namespace HAC2Beta2
             this.VersionCombo.TabIndex = 0;
             this.VersionCombo.Text = "Version";
             this.VersionCombo.SelectedIndexChanged += new System.EventHandler(this.VersionCombo_changeIndex);
-            // 
-            // ServerBrowserList
-            // 
-            this.ServerBrowserList.AllColumns.Add(this.olvColumn1);
-            this.ServerBrowserList.AllColumns.Add(this.olvColumn2);
-            this.ServerBrowserList.AllColumns.Add(this.olvColumn3);
-            this.ServerBrowserList.AllColumns.Add(this.olvColumn4);
-            this.ServerBrowserList.AllColumns.Add(this.olvColumn5);
-            this.ServerBrowserList.AllColumns.Add(this.olvColumn6);
-            this.ServerBrowserList.AlternateRowBackColor = System.Drawing.Color.Gainsboro;
-            this.ServerBrowserList.BackColor = System.Drawing.Color.White;
-            this.ServerBrowserList.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ServerBrowserList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.olvColumn1,
-            this.olvColumn2,
-            this.olvColumn3,
-            this.olvColumn4,
-            this.olvColumn5,
-            this.olvColumn6});
-            this.ServerBrowserList.FullRowSelect = true;
-            this.ServerBrowserList.GridLines = true;
-            this.ServerBrowserList.HighlightBackgroundColor = System.Drawing.Color.Black;
-            this.ServerBrowserList.HighlightForegroundColor = System.Drawing.Color.Maroon;
-            this.ServerBrowserList.Location = new System.Drawing.Point(9, 10);
-            this.ServerBrowserList.MultiSelect = false;
-            this.ServerBrowserList.Name = "ServerBrowserList";
-            this.ServerBrowserList.SelectAllOnControlA = false;
-            this.ServerBrowserList.SelectedColumnTint = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.ServerBrowserList.ShowGroups = false;
-            this.ServerBrowserList.Size = new System.Drawing.Size(607, 253);
-            this.ServerBrowserList.SortGroupItemsByPrimaryColumn = false;
-            this.ServerBrowserList.Sorting = System.Windows.Forms.SortOrder.Ascending;
-            this.ServerBrowserList.TabIndex = 2;
-            this.ServerBrowserList.TintSortColumn = true;
-            this.ServerBrowserList.UnfocusedHighlightBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.ServerBrowserList.UnfocusedHighlightForegroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.ServerBrowserList.UseAlternatingBackColors = true;
-            this.ServerBrowserList.UseCompatibleStateImageBehavior = false;
-            this.ServerBrowserList.UseFiltering = true;
-            this.ServerBrowserList.UseTranslucentSelection = true;
-            this.ServerBrowserList.View = System.Windows.Forms.View.Details;
-            this.ServerBrowserList.SelectedIndexChanged += new System.EventHandler(this.ServerBrowser_SelectServer);
-            // 
-            // olvColumn1
-            // 
-            this.olvColumn1.AspectName = "addr";
-            this.olvColumn1.Text = "IPAddress";
-            this.olvColumn1.Width = 0;
-            // 
-            // olvColumn2
-            // 
-            this.olvColumn2.AspectName = "pass";
-            this.olvColumn2.Text = " ";
-            this.olvColumn2.Width = 24;
-            // 
-            // olvColumn3
-            // 
-            this.olvColumn3.AspectName = "Name";
-            this.olvColumn3.Text = "Name";
-            this.olvColumn3.Width = 220;
-            // 
-            // olvColumn4
-            // 
-            this.olvColumn4.AspectName = "Map";
-            this.olvColumn4.Text = "Map";
-            this.olvColumn4.Width = 90;
-            // 
-            // olvColumn5
-            // 
-            this.olvColumn5.AspectName = "AspectPlayers";
-            this.olvColumn5.Text = "Players";
-            // 
-            // olvColumn6
-            // 
-            this.olvColumn6.AspectName = "AspectGametype";
-            this.olvColumn6.Text = "Gametype";
-            this.olvColumn6.Width = 120;
             // 
             // groupBox2
             // 
@@ -834,6 +755,92 @@ namespace HAC2Beta2
             this.WarningLabel.TabIndex = 25;
             this.WarningLabel.Text = "Data collection in progress...";
             // 
+            // QuickServerBrowser
+            // 
+            this.QuickServerBrowser.AllowColumnResize = true;
+            this.QuickServerBrowser.AllowMultiselect = false;
+            this.QuickServerBrowser.AlternateBackground = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.QuickServerBrowser.AlternatingColors = false;
+            this.QuickServerBrowser.AutoHeight = true;
+            this.QuickServerBrowser.BackColor = System.Drawing.Color.White;
+            this.QuickServerBrowser.BackgroundStretchToFit = true;
+            glColumn1.ActivatedEmbeddedType = GlacialComponents.Controls.GLActivatedEmbeddedTypes.None;
+            glColumn1.CheckBoxes = false;
+            glColumn1.ImageIndex = -1;
+            glColumn1.Name = "passcol";
+            glColumn1.NumericSort = false;
+            glColumn1.Text = " ";
+            glColumn1.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            glColumn1.Width = 20;
+            glColumn2.ActivatedEmbeddedType = GlacialComponents.Controls.GLActivatedEmbeddedTypes.None;
+            glColumn2.CheckBoxes = false;
+            glColumn2.ImageIndex = -1;
+            glColumn2.Name = "namecol";
+            glColumn2.NumericSort = false;
+            glColumn2.Text = "Name";
+            glColumn2.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            glColumn2.Width = 220;
+            glColumn3.ActivatedEmbeddedType = GlacialComponents.Controls.GLActivatedEmbeddedTypes.None;
+            glColumn3.CheckBoxes = false;
+            glColumn3.ImageIndex = -1;
+            glColumn3.Name = "mapcol";
+            glColumn3.NumericSort = false;
+            glColumn3.Text = "Map";
+            glColumn3.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            glColumn3.Width = 70;
+            glColumn4.ActivatedEmbeddedType = GlacialComponents.Controls.GLActivatedEmbeddedTypes.None;
+            glColumn4.CheckBoxes = false;
+            glColumn4.ImageIndex = -1;
+            glColumn4.Name = "playerscol";
+            glColumn4.NumericSort = false;
+            glColumn4.Text = "Players";
+            glColumn4.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            glColumn4.Width = 50;
+            glColumn5.ActivatedEmbeddedType = GlacialComponents.Controls.GLActivatedEmbeddedTypes.None;
+            glColumn5.CheckBoxes = false;
+            glColumn5.ImageIndex = -1;
+            glColumn5.Name = "gametype";
+            glColumn5.NumericSort = false;
+            glColumn5.Text = "Gametype";
+            glColumn5.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            glColumn5.Width = 100;
+            this.QuickServerBrowser.Columns.AddRange(new GlacialComponents.Controls.GLColumn[] {
+            glColumn1,
+            glColumn2,
+            glColumn3,
+            glColumn4,
+            glColumn5});
+            this.QuickServerBrowser.ControlStyle = GlacialComponents.Controls.GLControlStyles.Normal;
+            this.QuickServerBrowser.FullRowSelect = true;
+            this.QuickServerBrowser.GridColor = System.Drawing.Color.LightGray;
+            this.QuickServerBrowser.GridLines = GlacialComponents.Controls.GLGridLines.gridHorizontal;
+            this.QuickServerBrowser.GridLineStyle = GlacialComponents.Controls.GLGridLineStyles.gridSolid;
+            this.QuickServerBrowser.GridTypes = GlacialComponents.Controls.GLGridTypes.gridNormal;
+            this.QuickServerBrowser.HeaderHeight = 22;
+            this.QuickServerBrowser.HeaderVisible = true;
+            this.QuickServerBrowser.HeaderWordWrap = false;
+            this.QuickServerBrowser.HotColumnTracking = false;
+            this.QuickServerBrowser.HotItemTracking = false;
+            this.QuickServerBrowser.HotTrackingColor = System.Drawing.Color.Gray;
+            this.QuickServerBrowser.HoverEvents = false;
+            this.QuickServerBrowser.HoverTime = 1;
+            this.QuickServerBrowser.ImageList = null;
+            this.QuickServerBrowser.ItemHeight = 17;
+            this.QuickServerBrowser.ItemWordWrap = false;
+            this.QuickServerBrowser.Location = new System.Drawing.Point(7, 10);
+            this.QuickServerBrowser.Name = "QuickServerBrowser";
+            this.QuickServerBrowser.Selectable = true;
+            this.QuickServerBrowser.SelectedTextColor = System.Drawing.Color.White;
+            this.QuickServerBrowser.SelectionColor = System.Drawing.Color.DimGray;
+            this.QuickServerBrowser.ShowBorder = true;
+            this.QuickServerBrowser.ShowFocusRect = false;
+            this.QuickServerBrowser.Size = new System.Drawing.Size(608, 253);
+            this.QuickServerBrowser.SortType = GlacialComponents.Controls.SortTypes.InsertionSort;
+            this.QuickServerBrowser.SuperFlatHeaderColor = System.Drawing.Color.White;
+            this.QuickServerBrowser.TabIndex = 4;
+            this.QuickServerBrowser.Text = "QuickServerBrowser";
+            this.QuickServerBrowser.Click += new System.EventHandler(this.QuickServerBrowser_Click);
+            // 
             // HACMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -869,7 +876,6 @@ namespace HAC2Beta2
             this.ServersPage.ResumeLayout(false);
             this.filtering.ResumeLayout(false);
             this.filtering.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ServerBrowserList)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GametypePicture)).EndInit();
@@ -927,13 +933,6 @@ namespace HAC2Beta2
         private System.Windows.Forms.Label GameNameDetail;
         private System.Windows.Forms.PictureBox MapPicture;
         private System.Windows.Forms.PictureBox GametypePicture;
-        private ObjectListView ServerBrowserList;
-        private OLVColumn olvColumn1;
-        private OLVColumn olvColumn2;
-        private OLVColumn olvColumn3;
-        private OLVColumn olvColumn4;
-        private OLVColumn olvColumn5;
-        private OLVColumn olvColumn6;
         private System.Windows.Forms.GroupBox filtering;
         private System.Windows.Forms.Button SearchButton;
         private System.Windows.Forms.TextBox SearchTextBox;
@@ -944,5 +943,6 @@ namespace HAC2Beta2
         private System.Windows.Forms.ComboBox VersionCombo;
         private System.Windows.Forms.Button ResetButton;
         private System.Windows.Forms.ComboBox MapCombo;
+        private GlacialComponents.Controls.GlacialList QuickServerBrowser;
     }
 }

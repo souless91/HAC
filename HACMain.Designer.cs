@@ -51,29 +51,8 @@ namespace HAC2Beta2
             this.MenuServers = new System.Windows.Forms.PictureBox();
             this.MenuChat = new System.Windows.Forms.PictureBox();
             this.Tabbings = new System.Windows.Forms.TabControl();
-            this.HACPage = new System.Windows.Forms.TabPage();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.ping = new System.Windows.Forms.Label();
-            this.ServerPass = new System.Windows.Forms.TextBox();
-            this.ServerIP = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.checkBox10 = new System.Windows.Forms.CheckBox();
-            this.checkBox9 = new System.Windows.Forms.CheckBox();
-            this.checkBox8 = new System.Windows.Forms.CheckBox();
-            this.checkBox7 = new System.Windows.Forms.CheckBox();
-            this.checkBox6 = new System.Windows.Forms.CheckBox();
-            this.checkBox5 = new System.Windows.Forms.CheckBox();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.Arguments = new System.Windows.Forms.TextBox();
-            this.BigBoy = new System.Windows.Forms.Button();
             this.ServersPage = new System.Windows.Forms.TabPage();
+            this.QuickServerBrowser = new GlacialComponents.Controls.GlacialList();
             this.filtering = new System.Windows.Forms.GroupBox();
             this.MapCombo = new System.Windows.Forms.ComboBox();
             this.ResetButton = new System.Windows.Forms.Button();
@@ -96,28 +75,50 @@ namespace HAC2Beta2
             this.PlayersDetail = new System.Windows.Forms.Label();
             this.NameDetail = new System.Windows.Forms.Label();
             this.ChatPage = new System.Windows.Forms.TabPage();
+            this.HACPage = new System.Windows.Forms.TabPage();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.ping = new System.Windows.Forms.Label();
+            this.ServerPass = new System.Windows.Forms.TextBox();
+            this.ServerIP = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.checkBox10 = new System.Windows.Forms.CheckBox();
+            this.checkBox9 = new System.Windows.Forms.CheckBox();
+            this.checkBox8 = new System.Windows.Forms.CheckBox();
+            this.checkBox7 = new System.Windows.Forms.CheckBox();
+            this.checkBox6 = new System.Windows.Forms.CheckBox();
+            this.checkBox5 = new System.Windows.Forms.CheckBox();
+            this.checkBox4 = new System.Windows.Forms.CheckBox();
+            this.checkBox3 = new System.Windows.Forms.CheckBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.Arguments = new System.Windows.Forms.TextBox();
+            this.BigBoy = new System.Windows.Forms.Button();
             this.ServerCount = new System.Windows.Forms.Label();
             this.ServersLbl = new System.Windows.Forms.Label();
             this.PlayersLbl = new System.Windows.Forms.Label();
             this.PlayerCount = new System.Windows.Forms.Label();
             this.WarningLabel = new System.Windows.Forms.Label();
-            this.QuickServerBrowser = new GlacialComponents.Controls.GlacialList();
             ((System.ComponentModel.ISupportInitialize)(this.CloseButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MenuHAC)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MenuServers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MenuChat)).BeginInit();
             this.Tabbings.SuspendLayout();
-            this.HACPage.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             this.ServersPage.SuspendLayout();
             this.filtering.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GametypePicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MapPicture)).BeginInit();
+            this.HACPage.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // CloseButton
             // 
+            this.CloseButton.BackColor = System.Drawing.Color.Transparent;
             this.CloseButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.CloseButton.Image = global::HAC2Beta2.Properties.Resources.HACGlobal_CloseButton;
             this.CloseButton.Location = new System.Drawing.Point(757, 12);
@@ -130,13 +131,13 @@ namespace HAC2Beta2
             // 
             // WindowTitle
             // 
+            this.WindowTitle.BackColor = System.Drawing.Color.Transparent;
             this.WindowTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.WindowTitle.ForeColor = System.Drawing.Color.Black;
-            this.WindowTitle.Image = global::HAC2Beta2.Properties.Resources.HACMain_HandleBG;
+            this.WindowTitle.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.WindowTitle.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.WindowTitle.Location = new System.Drawing.Point(3, 3);
+            this.WindowTitle.Location = new System.Drawing.Point(7, 7);
             this.WindowTitle.Name = "WindowTitle";
-            this.WindowTitle.Size = new System.Drawing.Size(771, 45);
+            this.WindowTitle.Size = new System.Drawing.Size(767, 20);
             this.WindowTitle.TabIndex = 16;
             this.WindowTitle.Text = "WindowTitle";
             this.WindowTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -146,7 +147,7 @@ namespace HAC2Beta2
             // 
             this.MenuHAC.Cursor = System.Windows.Forms.Cursors.Hand;
             this.MenuHAC.Image = global::HAC2Beta2.Properties.Resources.HACMain_MenuHomeH;
-            this.MenuHAC.Location = new System.Drawing.Point(9, 47);
+            this.MenuHAC.Location = new System.Drawing.Point(9, 38);
             this.MenuHAC.Name = "MenuHAC";
             this.MenuHAC.Size = new System.Drawing.Size(103, 23);
             this.MenuHAC.TabIndex = 19;
@@ -159,7 +160,7 @@ namespace HAC2Beta2
             // 
             this.MenuServers.Cursor = System.Windows.Forms.Cursors.Hand;
             this.MenuServers.Image = global::HAC2Beta2.Properties.Resources.HACMain_MenuServersI;
-            this.MenuServers.Location = new System.Drawing.Point(111, 55);
+            this.MenuServers.Location = new System.Drawing.Point(111, 38);
             this.MenuServers.Name = "MenuServers";
             this.MenuServers.Size = new System.Drawing.Size(103, 23);
             this.MenuServers.TabIndex = 19;
@@ -172,7 +173,7 @@ namespace HAC2Beta2
             // 
             this.MenuChat.Cursor = System.Windows.Forms.Cursors.Hand;
             this.MenuChat.Image = global::HAC2Beta2.Properties.Resources.HACMain_MenuChatI;
-            this.MenuChat.Location = new System.Drawing.Point(213, 55);
+            this.MenuChat.Location = new System.Drawing.Point(213, 38);
             this.MenuChat.Name = "MenuChat";
             this.MenuChat.Size = new System.Drawing.Size(103, 23);
             this.MenuChat.TabIndex = 20;
@@ -183,256 +184,14 @@ namespace HAC2Beta2
             // 
             // Tabbings
             // 
-            this.Tabbings.Controls.Add(this.HACPage);
             this.Tabbings.Controls.Add(this.ServersPage);
             this.Tabbings.Controls.Add(this.ChatPage);
-            this.Tabbings.Location = new System.Drawing.Point(9, 56);
+            this.Tabbings.Controls.Add(this.HACPage);
+            this.Tabbings.Location = new System.Drawing.Point(9, 42);
             this.Tabbings.Name = "Tabbings";
             this.Tabbings.SelectedIndex = 0;
-            this.Tabbings.Size = new System.Drawing.Size(764, 434);
+            this.Tabbings.Size = new System.Drawing.Size(764, 448);
             this.Tabbings.TabIndex = 21;
-            // 
-            // HACPage
-            // 
-            this.HACPage.Controls.Add(this.groupBox1);
-            this.HACPage.Controls.Add(this.button2);
-            this.HACPage.Controls.Add(this.checkBox10);
-            this.HACPage.Controls.Add(this.checkBox9);
-            this.HACPage.Controls.Add(this.checkBox8);
-            this.HACPage.Controls.Add(this.checkBox7);
-            this.HACPage.Controls.Add(this.checkBox6);
-            this.HACPage.Controls.Add(this.checkBox5);
-            this.HACPage.Controls.Add(this.checkBox4);
-            this.HACPage.Controls.Add(this.checkBox3);
-            this.HACPage.Controls.Add(this.checkBox2);
-            this.HACPage.Controls.Add(this.checkBox1);
-            this.HACPage.Controls.Add(this.label1);
-            this.HACPage.Controls.Add(this.Arguments);
-            this.HACPage.Controls.Add(this.BigBoy);
-            this.HACPage.Location = new System.Drawing.Point(4, 22);
-            this.HACPage.Name = "HACPage";
-            this.HACPage.Padding = new System.Windows.Forms.Padding(3);
-            this.HACPage.Size = new System.Drawing.Size(756, 408);
-            this.HACPage.TabIndex = 0;
-            this.HACPage.Text = "HAC";
-            this.HACPage.UseVisualStyleBackColor = true;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.ping);
-            this.groupBox1.Controls.Add(this.ServerPass);
-            this.groupBox1.Controls.Add(this.ServerIP);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Location = new System.Drawing.Point(13, 174);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(314, 75);
-            this.groupBox1.TabIndex = 16;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Direct Connect";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(255, 14);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(31, 13);
-            this.label4.TabIndex = 19;
-            this.label4.Text = "Ping:";
-            // 
-            // ping
-            // 
-            this.ping.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ping.Location = new System.Drawing.Point(234, 30);
-            this.ping.Name = "ping";
-            this.ping.Size = new System.Drawing.Size(74, 33);
-            this.ping.TabIndex = 18;
-            this.ping.Text = "N/A";
-            this.ping.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // ServerPass
-            // 
-            this.ServerPass.Location = new System.Drawing.Point(84, 45);
-            this.ServerPass.Name = "ServerPass";
-            this.ServerPass.Size = new System.Drawing.Size(150, 20);
-            this.ServerPass.TabIndex = 17;
-            // 
-            // ServerIP
-            // 
-            this.ServerIP.Location = new System.Drawing.Point(84, 19);
-            this.ServerIP.Name = "ServerIP";
-            this.ServerIP.Size = new System.Drawing.Size(150, 20);
-            this.ServerIP.TabIndex = 16;
-            this.ServerIP.Leave += new System.EventHandler(this.ServerIP_Leave);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(24, 22);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(54, 13);
-            this.label2.TabIndex = 14;
-            this.label2.Text = "Server IP:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(11, 48);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(67, 13);
-            this.label3.TabIndex = 15;
-            this.label3.Text = "Server Pass:";
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(407, 93);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(154, 23);
-            this.button2.TabIndex = 13;
-            this.button2.Text = "Clear Arguments";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // checkBox10
-            // 
-            this.checkBox10.AutoSize = true;
-            this.checkBox10.Location = new System.Drawing.Point(175, 148);
-            this.checkBox10.Name = "checkBox10";
-            this.checkBox10.Size = new System.Drawing.Size(74, 17);
-            this.checkBox10.TabIndex = 12;
-            this.checkBox10.Text = "Safemode";
-            this.checkBox10.UseVisualStyleBackColor = true;
-            this.checkBox10.CheckedChanged += new System.EventHandler(this.checkBox10_CheckedChanged);
-            // 
-            // checkBox9
-            // 
-            this.checkBox9.AutoSize = true;
-            this.checkBox9.Location = new System.Drawing.Point(175, 124);
-            this.checkBox9.Name = "checkBox9";
-            this.checkBox9.Size = new System.Drawing.Size(125, 17);
-            this.checkBox9.TabIndex = 11;
-            this.checkBox9.Text = "Force Fixed Function";
-            this.checkBox9.UseVisualStyleBackColor = true;
-            this.checkBox9.CheckedChanged += new System.EventHandler(this.checkBox9_CheckedChanged);
-            // 
-            // checkBox8
-            // 
-            this.checkBox8.AutoSize = true;
-            this.checkBox8.Location = new System.Drawing.Point(175, 100);
-            this.checkBox8.Name = "checkBox8";
-            this.checkBox8.Size = new System.Drawing.Size(108, 17);
-            this.checkBox8.TabIndex = 10;
-            this.checkBox8.Text = "Force 1.1 Shader";
-            this.checkBox8.UseVisualStyleBackColor = true;
-            this.checkBox8.CheckedChanged += new System.EventHandler(this.checkBox8_CheckedChanged);
-            // 
-            // checkBox7
-            // 
-            this.checkBox7.AutoSize = true;
-            this.checkBox7.Location = new System.Drawing.Point(175, 76);
-            this.checkBox7.Name = "checkBox7";
-            this.checkBox7.Size = new System.Drawing.Size(108, 17);
-            this.checkBox7.TabIndex = 9;
-            this.checkBox7.Text = "Force 1.4 Shader";
-            this.checkBox7.UseVisualStyleBackColor = true;
-            this.checkBox7.CheckedChanged += new System.EventHandler(this.checkBox7_CheckedChanged);
-            // 
-            // checkBox6
-            // 
-            this.checkBox6.AutoSize = true;
-            this.checkBox6.Location = new System.Drawing.Point(175, 52);
-            this.checkBox6.Name = "checkBox6";
-            this.checkBox6.Size = new System.Drawing.Size(108, 17);
-            this.checkBox6.TabIndex = 8;
-            this.checkBox6.Text = "Force 2.0 Shader";
-            this.checkBox6.UseVisualStyleBackColor = true;
-            this.checkBox6.CheckedChanged += new System.EventHandler(this.checkBox6_CheckedChanged);
-            // 
-            // checkBox5
-            // 
-            this.checkBox5.AutoSize = true;
-            this.checkBox5.Location = new System.Drawing.Point(9, 148);
-            this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(109, 17);
-            this.checkBox5.TabIndex = 7;
-            this.checkBox5.Text = "Disable All Sound";
-            this.checkBox5.UseVisualStyleBackColor = true;
-            this.checkBox5.CheckedChanged += new System.EventHandler(this.checkBox5_CheckedChanged);
-            // 
-            // checkBox4
-            // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(9, 124);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(140, 17);
-            this.checkBox4.TabIndex = 6;
-            this.checkBox4.Text = "Disable Joystick support";
-            this.checkBox4.UseVisualStyleBackColor = true;
-            this.checkBox4.CheckedChanged += new System.EventHandler(this.checkBox4_CheckedChanged);
-            // 
-            // checkBox3
-            // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(9, 100);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(120, 17);
-            this.checkBox3.TabIndex = 5;
-            this.checkBox3.Text = "Disable Intro Videos";
-            this.checkBox3.UseVisualStyleBackColor = true;
-            this.checkBox3.CheckedChanged += new System.EventHandler(this.checkBox3_CheckedChanged);
-            // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(9, 76);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(107, 17);
-            this.checkBox2.TabIndex = 4;
-            this.checkBox2.Text = "Windowed Mode";
-            this.checkBox2.UseVisualStyleBackColor = true;
-            this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(9, 52);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(64, 17);
-            this.checkBox1.TabIndex = 3;
-            this.checkBox1.Text = "Console";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 6);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(57, 13);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Arguments";
-            // 
-            // Arguments
-            // 
-            this.Arguments.Location = new System.Drawing.Point(9, 23);
-            this.Arguments.Name = "Arguments";
-            this.Arguments.Size = new System.Drawing.Size(382, 20);
-            this.Arguments.TabIndex = 1;
-            // 
-            // BigBoy
-            // 
-            this.BigBoy.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BigBoy.Image = global::HAC2Beta2.Properties.Resources.MasterChiefIcon;
-            this.BigBoy.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BigBoy.Location = new System.Drawing.Point(407, 23);
-            this.BigBoy.Name = "BigBoy";
-            this.BigBoy.Size = new System.Drawing.Size(154, 64);
-            this.BigBoy.TabIndex = 0;
-            this.BigBoy.Text = "Start Halo";
-            this.BigBoy.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BigBoy.UseVisualStyleBackColor = true;
-            this.BigBoy.Click += new System.EventHandler(this.RunHACBitch);
             // 
             // ServersPage
             // 
@@ -442,10 +201,96 @@ namespace HAC2Beta2
             this.ServersPage.Location = new System.Drawing.Point(4, 22);
             this.ServersPage.Name = "ServersPage";
             this.ServersPage.Padding = new System.Windows.Forms.Padding(3);
-            this.ServersPage.Size = new System.Drawing.Size(756, 408);
+            this.ServersPage.Size = new System.Drawing.Size(756, 422);
             this.ServersPage.TabIndex = 1;
             this.ServersPage.Text = "Servers";
             this.ServersPage.UseVisualStyleBackColor = true;
+            // 
+            // QuickServerBrowser
+            // 
+            this.QuickServerBrowser.AllowColumnResize = true;
+            this.QuickServerBrowser.AllowMultiselect = false;
+            this.QuickServerBrowser.AlternateBackground = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.QuickServerBrowser.AlternatingColors = false;
+            this.QuickServerBrowser.AutoHeight = true;
+            this.QuickServerBrowser.BackColor = System.Drawing.Color.White;
+            this.QuickServerBrowser.BackgroundStretchToFit = true;
+            glColumn1.ActivatedEmbeddedType = GlacialComponents.Controls.GLActivatedEmbeddedTypes.None;
+            glColumn1.CheckBoxes = false;
+            glColumn1.ImageIndex = -1;
+            glColumn1.Name = "passcol";
+            glColumn1.NumericSort = false;
+            glColumn1.Text = " ";
+            glColumn1.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            glColumn1.Width = 20;
+            glColumn2.ActivatedEmbeddedType = GlacialComponents.Controls.GLActivatedEmbeddedTypes.None;
+            glColumn2.CheckBoxes = false;
+            glColumn2.ImageIndex = -1;
+            glColumn2.Name = "namecol";
+            glColumn2.NumericSort = false;
+            glColumn2.Text = "Name";
+            glColumn2.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            glColumn2.Width = 220;
+            glColumn3.ActivatedEmbeddedType = GlacialComponents.Controls.GLActivatedEmbeddedTypes.None;
+            glColumn3.CheckBoxes = false;
+            glColumn3.ImageIndex = -1;
+            glColumn3.Name = "mapcol";
+            glColumn3.NumericSort = false;
+            glColumn3.Text = "Map";
+            glColumn3.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            glColumn3.Width = 70;
+            glColumn4.ActivatedEmbeddedType = GlacialComponents.Controls.GLActivatedEmbeddedTypes.None;
+            glColumn4.CheckBoxes = false;
+            glColumn4.ImageIndex = -1;
+            glColumn4.Name = "playerscol";
+            glColumn4.NumericSort = false;
+            glColumn4.Text = "Players";
+            glColumn4.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            glColumn4.Width = 50;
+            glColumn5.ActivatedEmbeddedType = GlacialComponents.Controls.GLActivatedEmbeddedTypes.None;
+            glColumn5.CheckBoxes = false;
+            glColumn5.ImageIndex = -1;
+            glColumn5.Name = "gametype";
+            glColumn5.NumericSort = false;
+            glColumn5.Text = "Gametype";
+            glColumn5.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            glColumn5.Width = 100;
+            this.QuickServerBrowser.Columns.AddRange(new GlacialComponents.Controls.GLColumn[] {
+            glColumn1,
+            glColumn2,
+            glColumn3,
+            glColumn4,
+            glColumn5});
+            this.QuickServerBrowser.ControlStyle = GlacialComponents.Controls.GLControlStyles.Normal;
+            this.QuickServerBrowser.FullRowSelect = true;
+            this.QuickServerBrowser.GridColor = System.Drawing.Color.LightGray;
+            this.QuickServerBrowser.GridLines = GlacialComponents.Controls.GLGridLines.gridHorizontal;
+            this.QuickServerBrowser.GridLineStyle = GlacialComponents.Controls.GLGridLineStyles.gridSolid;
+            this.QuickServerBrowser.GridTypes = GlacialComponents.Controls.GLGridTypes.gridNormal;
+            this.QuickServerBrowser.HeaderHeight = 22;
+            this.QuickServerBrowser.HeaderVisible = true;
+            this.QuickServerBrowser.HeaderWordWrap = false;
+            this.QuickServerBrowser.HotColumnTracking = false;
+            this.QuickServerBrowser.HotItemTracking = false;
+            this.QuickServerBrowser.HotTrackingColor = System.Drawing.Color.Gray;
+            this.QuickServerBrowser.HoverEvents = false;
+            this.QuickServerBrowser.HoverTime = 1;
+            this.QuickServerBrowser.ImageList = null;
+            this.QuickServerBrowser.ItemHeight = 17;
+            this.QuickServerBrowser.ItemWordWrap = false;
+            this.QuickServerBrowser.Location = new System.Drawing.Point(7, 10);
+            this.QuickServerBrowser.Name = "QuickServerBrowser";
+            this.QuickServerBrowser.Selectable = true;
+            this.QuickServerBrowser.SelectedTextColor = System.Drawing.Color.White;
+            this.QuickServerBrowser.SelectionColor = System.Drawing.Color.DimGray;
+            this.QuickServerBrowser.ShowBorder = true;
+            this.QuickServerBrowser.ShowFocusRect = false;
+            this.QuickServerBrowser.Size = new System.Drawing.Size(608, 253);
+            this.QuickServerBrowser.SortType = GlacialComponents.Controls.SortTypes.InsertionSort;
+            this.QuickServerBrowser.SuperFlatHeaderColor = System.Drawing.Color.White;
+            this.QuickServerBrowser.TabIndex = 4;
+            this.QuickServerBrowser.Text = "QuickServerBrowser";
+            this.QuickServerBrowser.Click += new System.EventHandler(this.QuickServerBrowser_Click);
             // 
             // filtering
             // 
@@ -701,15 +546,257 @@ namespace HAC2Beta2
             this.ChatPage.Location = new System.Drawing.Point(4, 22);
             this.ChatPage.Name = "ChatPage";
             this.ChatPage.Padding = new System.Windows.Forms.Padding(3);
-            this.ChatPage.Size = new System.Drawing.Size(756, 408);
+            this.ChatPage.Size = new System.Drawing.Size(756, 422);
             this.ChatPage.TabIndex = 2;
             this.ChatPage.Text = "Chat";
             this.ChatPage.UseVisualStyleBackColor = true;
             // 
+            // HACPage
+            // 
+            this.HACPage.Controls.Add(this.groupBox1);
+            this.HACPage.Controls.Add(this.button2);
+            this.HACPage.Controls.Add(this.checkBox10);
+            this.HACPage.Controls.Add(this.checkBox9);
+            this.HACPage.Controls.Add(this.checkBox8);
+            this.HACPage.Controls.Add(this.checkBox7);
+            this.HACPage.Controls.Add(this.checkBox6);
+            this.HACPage.Controls.Add(this.checkBox5);
+            this.HACPage.Controls.Add(this.checkBox4);
+            this.HACPage.Controls.Add(this.checkBox3);
+            this.HACPage.Controls.Add(this.checkBox2);
+            this.HACPage.Controls.Add(this.checkBox1);
+            this.HACPage.Controls.Add(this.label1);
+            this.HACPage.Controls.Add(this.Arguments);
+            this.HACPage.Controls.Add(this.BigBoy);
+            this.HACPage.Location = new System.Drawing.Point(4, 22);
+            this.HACPage.Name = "HACPage";
+            this.HACPage.Padding = new System.Windows.Forms.Padding(3);
+            this.HACPage.Size = new System.Drawing.Size(756, 422);
+            this.HACPage.TabIndex = 0;
+            this.HACPage.Text = "HAC";
+            this.HACPage.UseVisualStyleBackColor = true;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.ping);
+            this.groupBox1.Controls.Add(this.ServerPass);
+            this.groupBox1.Controls.Add(this.ServerIP);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Location = new System.Drawing.Point(13, 174);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(314, 75);
+            this.groupBox1.TabIndex = 16;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Direct Connect";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(255, 14);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(31, 13);
+            this.label4.TabIndex = 19;
+            this.label4.Text = "Ping:";
+            // 
+            // ping
+            // 
+            this.ping.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ping.Location = new System.Drawing.Point(234, 30);
+            this.ping.Name = "ping";
+            this.ping.Size = new System.Drawing.Size(74, 33);
+            this.ping.TabIndex = 18;
+            this.ping.Text = "N/A";
+            this.ping.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // ServerPass
+            // 
+            this.ServerPass.Location = new System.Drawing.Point(84, 45);
+            this.ServerPass.Name = "ServerPass";
+            this.ServerPass.Size = new System.Drawing.Size(150, 20);
+            this.ServerPass.TabIndex = 17;
+            // 
+            // ServerIP
+            // 
+            this.ServerIP.Location = new System.Drawing.Point(84, 19);
+            this.ServerIP.Name = "ServerIP";
+            this.ServerIP.Size = new System.Drawing.Size(150, 20);
+            this.ServerIP.TabIndex = 16;
+            this.ServerIP.Leave += new System.EventHandler(this.ServerIP_Leave);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(24, 22);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(54, 13);
+            this.label2.TabIndex = 14;
+            this.label2.Text = "Server IP:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(11, 48);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(67, 13);
+            this.label3.TabIndex = 15;
+            this.label3.Text = "Server Pass:";
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(407, 93);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(154, 23);
+            this.button2.TabIndex = 13;
+            this.button2.Text = "Clear Arguments";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // checkBox10
+            // 
+            this.checkBox10.AutoSize = true;
+            this.checkBox10.Location = new System.Drawing.Point(175, 148);
+            this.checkBox10.Name = "checkBox10";
+            this.checkBox10.Size = new System.Drawing.Size(74, 17);
+            this.checkBox10.TabIndex = 12;
+            this.checkBox10.Text = "Safemode";
+            this.checkBox10.UseVisualStyleBackColor = true;
+            this.checkBox10.CheckedChanged += new System.EventHandler(this.checkBox10_CheckedChanged);
+            // 
+            // checkBox9
+            // 
+            this.checkBox9.AutoSize = true;
+            this.checkBox9.Location = new System.Drawing.Point(175, 124);
+            this.checkBox9.Name = "checkBox9";
+            this.checkBox9.Size = new System.Drawing.Size(125, 17);
+            this.checkBox9.TabIndex = 11;
+            this.checkBox9.Text = "Force Fixed Function";
+            this.checkBox9.UseVisualStyleBackColor = true;
+            this.checkBox9.CheckedChanged += new System.EventHandler(this.checkBox9_CheckedChanged);
+            // 
+            // checkBox8
+            // 
+            this.checkBox8.AutoSize = true;
+            this.checkBox8.Location = new System.Drawing.Point(175, 100);
+            this.checkBox8.Name = "checkBox8";
+            this.checkBox8.Size = new System.Drawing.Size(108, 17);
+            this.checkBox8.TabIndex = 10;
+            this.checkBox8.Text = "Force 1.1 Shader";
+            this.checkBox8.UseVisualStyleBackColor = true;
+            this.checkBox8.CheckedChanged += new System.EventHandler(this.checkBox8_CheckedChanged);
+            // 
+            // checkBox7
+            // 
+            this.checkBox7.AutoSize = true;
+            this.checkBox7.Location = new System.Drawing.Point(175, 76);
+            this.checkBox7.Name = "checkBox7";
+            this.checkBox7.Size = new System.Drawing.Size(108, 17);
+            this.checkBox7.TabIndex = 9;
+            this.checkBox7.Text = "Force 1.4 Shader";
+            this.checkBox7.UseVisualStyleBackColor = true;
+            this.checkBox7.CheckedChanged += new System.EventHandler(this.checkBox7_CheckedChanged);
+            // 
+            // checkBox6
+            // 
+            this.checkBox6.AutoSize = true;
+            this.checkBox6.Location = new System.Drawing.Point(175, 52);
+            this.checkBox6.Name = "checkBox6";
+            this.checkBox6.Size = new System.Drawing.Size(108, 17);
+            this.checkBox6.TabIndex = 8;
+            this.checkBox6.Text = "Force 2.0 Shader";
+            this.checkBox6.UseVisualStyleBackColor = true;
+            this.checkBox6.CheckedChanged += new System.EventHandler(this.checkBox6_CheckedChanged);
+            // 
+            // checkBox5
+            // 
+            this.checkBox5.AutoSize = true;
+            this.checkBox5.Location = new System.Drawing.Point(9, 148);
+            this.checkBox5.Name = "checkBox5";
+            this.checkBox5.Size = new System.Drawing.Size(109, 17);
+            this.checkBox5.TabIndex = 7;
+            this.checkBox5.Text = "Disable All Sound";
+            this.checkBox5.UseVisualStyleBackColor = true;
+            this.checkBox5.CheckedChanged += new System.EventHandler(this.checkBox5_CheckedChanged);
+            // 
+            // checkBox4
+            // 
+            this.checkBox4.AutoSize = true;
+            this.checkBox4.Location = new System.Drawing.Point(9, 124);
+            this.checkBox4.Name = "checkBox4";
+            this.checkBox4.Size = new System.Drawing.Size(140, 17);
+            this.checkBox4.TabIndex = 6;
+            this.checkBox4.Text = "Disable Joystick support";
+            this.checkBox4.UseVisualStyleBackColor = true;
+            this.checkBox4.CheckedChanged += new System.EventHandler(this.checkBox4_CheckedChanged);
+            // 
+            // checkBox3
+            // 
+            this.checkBox3.AutoSize = true;
+            this.checkBox3.Location = new System.Drawing.Point(9, 100);
+            this.checkBox3.Name = "checkBox3";
+            this.checkBox3.Size = new System.Drawing.Size(120, 17);
+            this.checkBox3.TabIndex = 5;
+            this.checkBox3.Text = "Disable Intro Videos";
+            this.checkBox3.UseVisualStyleBackColor = true;
+            this.checkBox3.CheckedChanged += new System.EventHandler(this.checkBox3_CheckedChanged);
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Location = new System.Drawing.Point(9, 76);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(107, 17);
+            this.checkBox2.TabIndex = 4;
+            this.checkBox2.Text = "Windowed Mode";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(9, 52);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(64, 17);
+            this.checkBox1.TabIndex = 3;
+            this.checkBox1.Text = "Console";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 6);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(57, 13);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Arguments";
+            // 
+            // Arguments
+            // 
+            this.Arguments.Location = new System.Drawing.Point(9, 23);
+            this.Arguments.Name = "Arguments";
+            this.Arguments.Size = new System.Drawing.Size(382, 20);
+            this.Arguments.TabIndex = 1;
+            // 
+            // BigBoy
+            // 
+            this.BigBoy.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BigBoy.Image = global::HAC2Beta2.Properties.Resources.MasterChiefIcon;
+            this.BigBoy.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BigBoy.Location = new System.Drawing.Point(407, 23);
+            this.BigBoy.Name = "BigBoy";
+            this.BigBoy.Size = new System.Drawing.Size(154, 64);
+            this.BigBoy.TabIndex = 0;
+            this.BigBoy.Text = "Start Halo";
+            this.BigBoy.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BigBoy.UseVisualStyleBackColor = true;
+            this.BigBoy.Click += new System.EventHandler(this.RunHACBitch);
+            // 
             // ServerCount
             // 
             this.ServerCount.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ServerCount.Location = new System.Drawing.Point(721, 51);
+            this.ServerCount.Location = new System.Drawing.Point(725, 37);
             this.ServerCount.Name = "ServerCount";
             this.ServerCount.Size = new System.Drawing.Size(47, 23);
             this.ServerCount.TabIndex = 10;
@@ -719,7 +806,7 @@ namespace HAC2Beta2
             // ServersLbl
             // 
             this.ServersLbl.AutoSize = true;
-            this.ServersLbl.Location = new System.Drawing.Point(678, 55);
+            this.ServersLbl.Location = new System.Drawing.Point(682, 41);
             this.ServersLbl.Name = "ServersLbl";
             this.ServersLbl.Size = new System.Drawing.Size(43, 13);
             this.ServersLbl.TabIndex = 22;
@@ -728,7 +815,7 @@ namespace HAC2Beta2
             // PlayersLbl
             // 
             this.PlayersLbl.AutoSize = true;
-            this.PlayersLbl.Location = new System.Drawing.Point(587, 55);
+            this.PlayersLbl.Location = new System.Drawing.Point(591, 41);
             this.PlayersLbl.Name = "PlayersLbl";
             this.PlayersLbl.Size = new System.Drawing.Size(41, 13);
             this.PlayersLbl.TabIndex = 23;
@@ -737,7 +824,7 @@ namespace HAC2Beta2
             // PlayerCount
             // 
             this.PlayerCount.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PlayerCount.Location = new System.Drawing.Point(629, 51);
+            this.PlayerCount.Location = new System.Drawing.Point(633, 37);
             this.PlayerCount.Name = "PlayerCount";
             this.PlayerCount.Size = new System.Drawing.Size(43, 23);
             this.PlayerCount.TabIndex = 24;
@@ -749,97 +836,11 @@ namespace HAC2Beta2
             this.WarningLabel.AutoSize = true;
             this.WarningLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.WarningLabel.ForeColor = System.Drawing.Color.DarkRed;
-            this.WarningLabel.Location = new System.Drawing.Point(317, 56);
+            this.WarningLabel.Location = new System.Drawing.Point(321, 42);
             this.WarningLabel.Name = "WarningLabel";
             this.WarningLabel.Size = new System.Drawing.Size(191, 15);
             this.WarningLabel.TabIndex = 25;
             this.WarningLabel.Text = "Data collection in progress...";
-            // 
-            // QuickServerBrowser
-            // 
-            this.QuickServerBrowser.AllowColumnResize = true;
-            this.QuickServerBrowser.AllowMultiselect = false;
-            this.QuickServerBrowser.AlternateBackground = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.QuickServerBrowser.AlternatingColors = false;
-            this.QuickServerBrowser.AutoHeight = true;
-            this.QuickServerBrowser.BackColor = System.Drawing.Color.White;
-            this.QuickServerBrowser.BackgroundStretchToFit = true;
-            glColumn1.ActivatedEmbeddedType = GlacialComponents.Controls.GLActivatedEmbeddedTypes.None;
-            glColumn1.CheckBoxes = false;
-            glColumn1.ImageIndex = -1;
-            glColumn1.Name = "passcol";
-            glColumn1.NumericSort = false;
-            glColumn1.Text = " ";
-            glColumn1.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            glColumn1.Width = 20;
-            glColumn2.ActivatedEmbeddedType = GlacialComponents.Controls.GLActivatedEmbeddedTypes.None;
-            glColumn2.CheckBoxes = false;
-            glColumn2.ImageIndex = -1;
-            glColumn2.Name = "namecol";
-            glColumn2.NumericSort = false;
-            glColumn2.Text = "Name";
-            glColumn2.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            glColumn2.Width = 220;
-            glColumn3.ActivatedEmbeddedType = GlacialComponents.Controls.GLActivatedEmbeddedTypes.None;
-            glColumn3.CheckBoxes = false;
-            glColumn3.ImageIndex = -1;
-            glColumn3.Name = "mapcol";
-            glColumn3.NumericSort = false;
-            glColumn3.Text = "Map";
-            glColumn3.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            glColumn3.Width = 70;
-            glColumn4.ActivatedEmbeddedType = GlacialComponents.Controls.GLActivatedEmbeddedTypes.None;
-            glColumn4.CheckBoxes = false;
-            glColumn4.ImageIndex = -1;
-            glColumn4.Name = "playerscol";
-            glColumn4.NumericSort = false;
-            glColumn4.Text = "Players";
-            glColumn4.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            glColumn4.Width = 50;
-            glColumn5.ActivatedEmbeddedType = GlacialComponents.Controls.GLActivatedEmbeddedTypes.None;
-            glColumn5.CheckBoxes = false;
-            glColumn5.ImageIndex = -1;
-            glColumn5.Name = "gametype";
-            glColumn5.NumericSort = false;
-            glColumn5.Text = "Gametype";
-            glColumn5.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            glColumn5.Width = 100;
-            this.QuickServerBrowser.Columns.AddRange(new GlacialComponents.Controls.GLColumn[] {
-            glColumn1,
-            glColumn2,
-            glColumn3,
-            glColumn4,
-            glColumn5});
-            this.QuickServerBrowser.ControlStyle = GlacialComponents.Controls.GLControlStyles.Normal;
-            this.QuickServerBrowser.FullRowSelect = true;
-            this.QuickServerBrowser.GridColor = System.Drawing.Color.LightGray;
-            this.QuickServerBrowser.GridLines = GlacialComponents.Controls.GLGridLines.gridHorizontal;
-            this.QuickServerBrowser.GridLineStyle = GlacialComponents.Controls.GLGridLineStyles.gridSolid;
-            this.QuickServerBrowser.GridTypes = GlacialComponents.Controls.GLGridTypes.gridNormal;
-            this.QuickServerBrowser.HeaderHeight = 22;
-            this.QuickServerBrowser.HeaderVisible = true;
-            this.QuickServerBrowser.HeaderWordWrap = false;
-            this.QuickServerBrowser.HotColumnTracking = false;
-            this.QuickServerBrowser.HotItemTracking = false;
-            this.QuickServerBrowser.HotTrackingColor = System.Drawing.Color.Gray;
-            this.QuickServerBrowser.HoverEvents = false;
-            this.QuickServerBrowser.HoverTime = 1;
-            this.QuickServerBrowser.ImageList = null;
-            this.QuickServerBrowser.ItemHeight = 17;
-            this.QuickServerBrowser.ItemWordWrap = false;
-            this.QuickServerBrowser.Location = new System.Drawing.Point(7, 10);
-            this.QuickServerBrowser.Name = "QuickServerBrowser";
-            this.QuickServerBrowser.Selectable = true;
-            this.QuickServerBrowser.SelectedTextColor = System.Drawing.Color.White;
-            this.QuickServerBrowser.SelectionColor = System.Drawing.Color.DimGray;
-            this.QuickServerBrowser.ShowBorder = true;
-            this.QuickServerBrowser.ShowFocusRect = false;
-            this.QuickServerBrowser.Size = new System.Drawing.Size(608, 253);
-            this.QuickServerBrowser.SortType = GlacialComponents.Controls.SortTypes.InsertionSort;
-            this.QuickServerBrowser.SuperFlatHeaderColor = System.Drawing.Color.White;
-            this.QuickServerBrowser.TabIndex = 4;
-            this.QuickServerBrowser.Text = "QuickServerBrowser";
-            this.QuickServerBrowser.Click += new System.EventHandler(this.QuickServerBrowser_Click);
             // 
             // HACMain
             // 
@@ -869,10 +870,6 @@ namespace HAC2Beta2
             ((System.ComponentModel.ISupportInitialize)(this.MenuServers)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MenuChat)).EndInit();
             this.Tabbings.ResumeLayout(false);
-            this.HACPage.ResumeLayout(false);
-            this.HACPage.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.ServersPage.ResumeLayout(false);
             this.filtering.ResumeLayout(false);
             this.filtering.PerformLayout();
@@ -880,6 +877,10 @@ namespace HAC2Beta2
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GametypePicture)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MapPicture)).EndInit();
+            this.HACPage.ResumeLayout(false);
+            this.HACPage.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

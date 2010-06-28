@@ -40,6 +40,7 @@ namespace HAC2Beta2
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HACLogin));
             this.UsernameLbl = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
@@ -145,7 +146,7 @@ namespace HAC2Beta2
             // pictureBox3
             // 
             this.pictureBox3.Image = global::HAC2Beta2.Properties.Resources.HACLogin_Logo;
-            this.pictureBox3.Location = new System.Drawing.Point(3, 30);
+            this.pictureBox3.Location = new System.Drawing.Point(3, 41);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(242, 71);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -172,9 +173,10 @@ namespace HAC2Beta2
             // 
             // CloseButton
             // 
+            this.CloseButton.BackColor = System.Drawing.Color.Transparent;
             this.CloseButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.CloseButton.Image = global::HAC2Beta2.Properties.Resources.HACGlobal_CloseButton;
-            this.CloseButton.Location = new System.Drawing.Point(228, 10);
+            this.CloseButton.Location = new System.Drawing.Point(227, 11);
             this.CloseButton.Name = "CloseButton";
             this.CloseButton.Size = new System.Drawing.Size(12, 12);
             this.CloseButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -184,12 +186,13 @@ namespace HAC2Beta2
             // 
             // WindowTitle
             // 
-            this.WindowTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.WindowTitle.ForeColor = System.Drawing.Color.Black;
+            this.WindowTitle.BackColor = System.Drawing.Color.Transparent;
+            this.WindowTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.WindowTitle.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.WindowTitle.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.WindowTitle.Location = new System.Drawing.Point(2, 2);
+            this.WindowTitle.Location = new System.Drawing.Point(7, 4);
             this.WindowTitle.Name = "WindowTitle";
-            this.WindowTitle.Size = new System.Drawing.Size(245, 26);
+            this.WindowTitle.Size = new System.Drawing.Size(238, 26);
             this.WindowTitle.TabIndex = 13;
             this.WindowTitle.Text = "WindowTitle";
             this.WindowTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -200,7 +203,7 @@ namespace HAC2Beta2
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.BackgroundImage = global::HAC2Beta2.Properties.Resources.HAC2Login_FormBG;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(252, 330);
             this.Controls.Add(this.CloseButton);

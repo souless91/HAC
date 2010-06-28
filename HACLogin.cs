@@ -58,7 +58,7 @@ namespace HAC2Beta2
 
         private void HACLogin_Load(object sender, EventArgs e)
         {
-            WindowTitle.Text = " " + this.Text;
+            WindowTitle.Text = this.Text;
         }
 
         private void WindowTitle_MouseDown(object sender, MouseEventArgs e)

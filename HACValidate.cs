@@ -57,14 +57,14 @@ namespace HAC2Beta2
             Control.CheckForIllegalCrossThreadCalls = false;
             InitializeComponent();
 
-            // Lets have a nice 10px radius rounded form
-            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 10, 10));
+            // Lets have a nice 20px radius rounded form
+            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
         }
 
         #region Form Events
         private void HACValidate_Load(object sender, EventArgs e)
         {
-            WindowTitle.Text = " " + this.Text;
+            WindowTitle.Text = this.Text;
 
             // Fake Mapscanning checks in a new form
             Thread t0 = new Thread(new ThreadStart(MapValidation));

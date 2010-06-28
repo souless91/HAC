@@ -60,13 +60,6 @@ namespace HAC2Beta2.Properties {
             }
         }
         
-        internal static System.Drawing.Bitmap HAC2Login_FormBG {
-            get {
-                object obj = ResourceManager.GetObject("HAC2Login_FormBG", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
         internal static System.Drawing.Bitmap HACGlobal_CloseButton {
             get {
                 object obj = ResourceManager.GetObject("HACGlobal_CloseButton", resourceCulture);
@@ -84,13 +77,6 @@ namespace HAC2Beta2.Properties {
         internal static System.Drawing.Bitmap HACLogin_FormBG {
             get {
                 object obj = ResourceManager.GetObject("HACLogin_FormBG", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap HACLogin_HandleBG {
-            get {
-                object obj = ResourceManager.GetObject("HACLogin_HandleBG", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -147,13 +133,6 @@ namespace HAC2Beta2.Properties {
         internal static System.Drawing.Bitmap HACMain_GametypeSlayer {
             get {
                 object obj = ResourceManager.GetObject("HACMain-GametypeSlayer", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap HACMain_HandleBG {
-            get {
-                object obj = ResourceManager.GetObject("HACMain_HandleBG", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -371,20 +350,6 @@ namespace HAC2Beta2.Properties {
         internal static System.Drawing.Bitmap HACValidate_FrontProg {
             get {
                 object obj = ResourceManager.GetObject("HACValidate_FrontProg", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap HACValidate_HandleBG {
-            get {
-                object obj = ResourceManager.GetObject("HACValidate_HandleBG", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap lock_1_ {
-            get {
-                object obj = ResourceManager.GetObject("lock[1]", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

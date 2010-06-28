@@ -52,9 +52,10 @@ namespace HAC2Beta2
             // 
             // CloseButton
             // 
+            this.CloseButton.BackColor = System.Drawing.Color.Transparent;
             this.CloseButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.CloseButton.Image = global::HAC2Beta2.Properties.Resources.HACGlobal_CloseButton;
-            this.CloseButton.Location = new System.Drawing.Point(294, 10);
+            this.CloseButton.Location = new System.Drawing.Point(293, 12);
             this.CloseButton.Name = "CloseButton";
             this.CloseButton.Size = new System.Drawing.Size(12, 12);
             this.CloseButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -64,13 +65,13 @@ namespace HAC2Beta2
             // 
             // WindowTitle
             // 
-            this.WindowTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.WindowTitle.ForeColor = System.Drawing.Color.Black;
-            this.WindowTitle.Image = global::HAC2Beta2.Properties.Resources.HACValidate_HandleBG;
+            this.WindowTitle.BackColor = System.Drawing.Color.Transparent;
+            this.WindowTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.WindowTitle.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.WindowTitle.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.WindowTitle.Location = new System.Drawing.Point(2, 2);
+            this.WindowTitle.Location = new System.Drawing.Point(7, 9);
             this.WindowTitle.Name = "WindowTitle";
-            this.WindowTitle.Size = new System.Drawing.Size(310, 26);
+            this.WindowTitle.Size = new System.Drawing.Size(301, 16);
             this.WindowTitle.TabIndex = 14;
             this.WindowTitle.Text = "WindowTitle";
             this.WindowTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -78,17 +79,17 @@ namespace HAC2Beta2
             // 
             // OutputTxt
             // 
-            this.OutputTxt.Location = new System.Drawing.Point(8, 75);
+            this.OutputTxt.Location = new System.Drawing.Point(8, 84);
             this.OutputTxt.Multiline = true;
             this.OutputTxt.Name = "OutputTxt";
-            this.OutputTxt.Size = new System.Drawing.Size(300, 63);
+            this.OutputTxt.Size = new System.Drawing.Size(300, 54);
             this.OutputTxt.TabIndex = 16;
             // 
             // BGProg
             // 
             this.BGProg.BackColor = System.Drawing.Color.Black;
             this.BGProg.Image = global::HAC2Beta2.Properties.Resources.HACValidate_BackProg;
-            this.BGProg.Location = new System.Drawing.Point(8, 33);
+            this.BGProg.Location = new System.Drawing.Point(8, 40);
             this.BGProg.Name = "BGProg";
             this.BGProg.Size = new System.Drawing.Size(300, 38);
             this.BGProg.TabIndex = 17;
@@ -98,7 +99,7 @@ namespace HAC2Beta2
             // 
             this.FGProg.BackColor = System.Drawing.Color.DimGray;
             this.FGProg.Image = global::HAC2Beta2.Properties.Resources.HACValidate_FrontProg;
-            this.FGProg.Location = new System.Drawing.Point(10, 35);
+            this.FGProg.Location = new System.Drawing.Point(10, 42);
             this.FGProg.Name = "FGProg";
             this.FGProg.Size = new System.Drawing.Size(20, 34);
             this.FGProg.TabIndex = 18;

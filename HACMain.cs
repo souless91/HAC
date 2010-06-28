@@ -88,6 +88,9 @@ namespace HAC2Beta2
             // Cute trick to change progress / display status from across threads
             Control.CheckForIllegalCrossThreadCalls = false;
             InitializeComponent();
+
+            // Lets have a nice 10px radius rounded form
+            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
         }
 
         #region Form Events
@@ -121,7 +124,7 @@ namespace HAC2Beta2
             GTPictures.Add("slayer", Properties.Resources.HACMain_GametypeSlayer);
             GTPictures.Add("oddball", Properties.Resources.HACMain_GametypeOddball);
 
-            WindowTitle.Text = "   " + Text;
+            WindowTitle.Text = Text;
 
             // Initialize QuickServerBrowser in new thread
             Thread t = new Thread(new ThreadStart(LoadServers));
@@ -469,7 +472,6 @@ namespace HAC2Beta2
                     temp.MaxPlayers = parseMe[10];
                     temp.AspectPlayers = parseMe[8] + " / " + parseMe[10];
                     temp.pass = parseMe[14].Substring(0, 1);
-                    temp.AspectPassword = (temp.pass == "1") ? Properties.Resources.lock_1_ : null;
                     temp.Version = parseMe[16];
                     playercounter += Convert.ToInt32(parseMe[8]+" ");
                     Servers[temp.addr] = temp;

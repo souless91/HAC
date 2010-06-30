@@ -118,16 +118,16 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="HACMain-MenuChat" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="HACMain_MenuChat" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\HACMain-MenuChat.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="HACLogin_Logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\HACLogin_Logo.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="HACMain-MenuHomeI" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="HACMain_MenuHomeI" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\HACMain-MenuHomeI.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="HACMain-MenuHomeH" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="HACMain_MenuHomeH" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\HACMain-MenuHomeH.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="HACValidate_FormBG" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -136,115 +136,118 @@
   <data name="MasterChiefIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\MasterChiefIcon.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="HACMain-MenuServers" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="HACMain_MenuServers" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\HACMain-MenuServers.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="HACValidate_FrontProg" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\HACValidate_FrontProg.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="HACMain-MapDangercanyon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="HACMain_MapDangercanyon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\HACMain-MapDangercanyon.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="HACMain-MapBloodgulch" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="HACMain_MapBloodgulch" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\HACMain-MapBloodgulch.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="HACMain-MenuChatI" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="HACMain_MenuChatI" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\HACMain-MenuChatI.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="HACMain-MapDeathisland" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="HACMain_MapDeathisland" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\HACMain-MapDeathisland.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="HACMain-MapDamnation" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="HACMain_MapDamnation" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\HACMain-MapDamnation.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="HACMain-GametypeSlayer" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="HACMain_GametypeSlayer" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\HACMain-GametypeSlayer.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="HACLogin_ConnectBTN" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\HACLogin_ConnectBTN.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="HACMain-MenuServersI" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="HACMain_MenuServersI" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\HACMain-MenuServersI.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="HACGlobal_CloseButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\HACGlobal_CloseButton.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="HACMain-MapInfinity" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="HACMain_MapInfinity" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\HACMain-MapInfinity.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="HACMain-MapPrisoner" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="HACMain_MapPrisoner" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\HACMain-MapPrisoner.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="HACMain-MapDerelict" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="HACMain_MapDerelict" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\HACMain-MapDerelict.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="HACMain-GametypeOddball" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="HACMain_GametypeOddball" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\HACMain-GametypeOddball.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="HACMain-MapLongest" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="HACMain_MapLongest" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\HACMain-MapLongest.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="HACValidate_BackProg" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\HACValidate_BackProg.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="HACMain-MapChillout" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="HACMain_MapChillout" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\HACMain-MapChillout.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="HACMain-MenuHome" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="HACMain_MenuHome" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\HACMain-MenuHome.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="HACLogin_TxtBoxBG" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\HACLogin_TxtBoxBG.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="HACMain-MapIceFields" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="HACMain_MapIceFields" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\HACMain-MapIceFields.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="HACMain-MapHangemhigh" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="HACMain_MapHangemhigh" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\HACMain-MapHangemhigh.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="HACMain-MapBattlecreek" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="HACMain_MapBattlecreek" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\HACMain-MapBattlecreek.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="HACMain-GametypeCTF" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="HACMain_GametypeCTF" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\HACMain-GametypeCTF.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="HACMain_FormBG" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\HACMain_FormBG.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="HACMain-MapBoardingaction" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="HACMain_MapBoardingaction" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\HACMain-MapBoardingaction.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="HACMain-MapGephyrophobia" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="HACMain_MapGephyrophobia" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\HACMain-MapGephyrophobia.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="HACMain-MapWizard" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="HACMain_MapWizard" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\HACMain-MapWizard.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="HACMain-MenuServersH" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="HACMain_MenuServersH" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\HACMain-MenuServersH.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="HACMain-GametypeKing" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="HACMain_GametypeKing" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\HACMain-GametypeKing.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="HACMain-GametypeRace" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="HACMain_GametypeRace" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\HACMain-GametypeRace.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="HACMain-MapRatrace" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="HACMain_MapRatrace" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\HACMain-MapRatrace.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="HACMain-MapSidewinder" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="HACMain_MapSidewinder" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\HACMain-MapSidewinder.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="HACMain-MenuChatH" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="HACMain_MenuChatH" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\HACMain-MenuChatH.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="HACMain-MapTimberland" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="HACMain_MapTimberland" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\HACMain-MapTimberland.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="HACMain-MapChiron" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="HACMain_MapChiron" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\HACMain-MapChiron.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="HACLogin_FormBG" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\HACLogin_FormBG.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Lock" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\lock_16.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

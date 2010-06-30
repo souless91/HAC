@@ -83,37 +83,56 @@
     <Compile Include="HACValidate.Designer.cs">
       <DependentUpon>HACValidate.cs</DependentUpon>
     </Compile>
-    <Compile Include="ListView\BorderStrip.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="ListView\ColumnCollection.cs" />
-    <Compile Include="ListView\GlacialList.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="ListView\GLComboBox.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="ListView\GLDateTimePicker.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="ListView\GLEmbeddedControl.cs" />
-    <Compile Include="ListView\GLMergeSort.cs" />
-    <Compile Include="ListView\GLQuickSort.cs" />
-    <Compile Include="ListView\GLTextBox.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="ListView\HelperFunctions.cs" />
-    <Compile Include="ListView\ItemCollection.cs" />
-    <Compile Include="ListView\ManagedHScrollBar.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="ListView\ManagedVScrollBar.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="ListView\ThemeRoutines.cs" />
-    <Compile Include="ListView\Win32.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServerBrowsing\Adornments.cs" />
+    <Compile Include="ServerBrowsing\Attributes.cs" />
+    <Compile Include="ServerBrowsing\CellEditors.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ServerBrowsing\Comparers.cs" />
+    <Compile Include="ServerBrowsing\DataListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ServerBrowsing\Decorations.cs" />
+    <Compile Include="ServerBrowsing\DragSource.cs" />
+    <Compile Include="ServerBrowsing\DropSink.cs" />
+    <Compile Include="ServerBrowsing\Events.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ServerBrowsing\FastObjectListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ServerBrowsing\Filters.cs" />
+    <Compile Include="ServerBrowsing\Generator.cs" />
+    <Compile Include="ServerBrowsing\GlassPanelForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ServerBrowsing\Groups.cs" />
+    <Compile Include="ServerBrowsing\HeaderControl.cs" />
+    <Compile Include="ServerBrowsing\Munger.cs" />
+    <Compile Include="ServerBrowsing\NativeMethods.cs" />
+    <Compile Include="ServerBrowsing\ObjectListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ServerBrowsing\ObjectListView.DesignTime.cs" />
+    <Compile Include="ServerBrowsing\Overlays.cs" />
+    <Compile Include="ServerBrowsing\Renderers.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ServerBrowsing\Styles.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ServerBrowsing\ToolTipControl.cs" />
+    <Compile Include="ServerBrowsing\TreeListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ServerBrowsing\TypedObjectListView.cs" />
+    <Compile Include="ServerBrowsing\VirtualGroups.cs" />
+    <Compile Include="ServerBrowsing\VirtualListDataSource.cs" />
+    <Compile Include="ServerBrowsing\VirtualObjectListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <EmbeddedResource Include="HACLogin.resx">
       <DependentUpon>HACLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -122,27 +141,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="HACValidate.resx">
       <DependentUpon>HACValidate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ListView\BorderStrip.resx">
-      <DependentUpon>BorderStrip.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ListView\GlacialList.resx">
-      <DependentUpon>GlacialList.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ListView\GLComboBox.resx">
-      <DependentUpon>GLComboBox.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ListView\GLDateTimePicker.resx">
-      <DependentUpon>GLDateTimePicker.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ListView\GLTextBox.resx">
-      <DependentUpon>GLTextBox.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ListView\ManagedHScrollBar.resx">
-      <DependentUpon>ManagedHScrollBar.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ListView\ManagedVScrollBar.resx">
-      <DependentUpon>ManagedVScrollBar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -175,16 +173,10 @@
     <None Include="Resources\HACLogin_Logo.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\HACLogin_HandleBG.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\HACGlobal_CloseButton.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\HACLogin_ConnectBTN.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\HACValidate_HandleBG.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\HACValidate_FormBG.png" />
@@ -197,9 +189,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\HACMain_FormBG.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\HACMain_HandleBG.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\HACMain-MenuChat.png" />
@@ -339,12 +328,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ListView\checked.bmp" />
-    <Content Include="ListView\GlacialList.bmp" />
-    <Content Include="ListView\GlacialList.csproj" />
-    <Content Include="ListView\unchecked.bmp" />
-    <None Include="Resources\HAC2Login_FormBG.png" />
-    <None Include="Resources\lock[1].png" />
+    <None Include="Resources\lock_16.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

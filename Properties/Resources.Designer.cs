@@ -104,231 +104,231 @@ namespace HAC2Beta2.Properties {
         
         internal static System.Drawing.Bitmap HACMain_GametypeCTF {
             get {
-                object obj = ResourceManager.GetObject("HACMain-GametypeCTF", resourceCulture);
+                object obj = ResourceManager.GetObject("HACMain_GametypeCTF", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         internal static System.Drawing.Bitmap HACMain_GametypeKing {
             get {
-                object obj = ResourceManager.GetObject("HACMain-GametypeKing", resourceCulture);
+                object obj = ResourceManager.GetObject("HACMain_GametypeKing", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         internal static System.Drawing.Bitmap HACMain_GametypeOddball {
             get {
-                object obj = ResourceManager.GetObject("HACMain-GametypeOddball", resourceCulture);
+                object obj = ResourceManager.GetObject("HACMain_GametypeOddball", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         internal static System.Drawing.Bitmap HACMain_GametypeRace {
             get {
-                object obj = ResourceManager.GetObject("HACMain-GametypeRace", resourceCulture);
+                object obj = ResourceManager.GetObject("HACMain_GametypeRace", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         internal static System.Drawing.Bitmap HACMain_GametypeSlayer {
             get {
-                object obj = ResourceManager.GetObject("HACMain-GametypeSlayer", resourceCulture);
+                object obj = ResourceManager.GetObject("HACMain_GametypeSlayer", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         internal static System.Drawing.Bitmap HACMain_MapBattlecreek {
             get {
-                object obj = ResourceManager.GetObject("HACMain-MapBattlecreek", resourceCulture);
+                object obj = ResourceManager.GetObject("HACMain_MapBattlecreek", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         internal static System.Drawing.Bitmap HACMain_MapBloodgulch {
             get {
-                object obj = ResourceManager.GetObject("HACMain-MapBloodgulch", resourceCulture);
+                object obj = ResourceManager.GetObject("HACMain_MapBloodgulch", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         internal static System.Drawing.Bitmap HACMain_MapBoardingaction {
             get {
-                object obj = ResourceManager.GetObject("HACMain-MapBoardingaction", resourceCulture);
+                object obj = ResourceManager.GetObject("HACMain_MapBoardingaction", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         internal static System.Drawing.Bitmap HACMain_MapChillout {
             get {
-                object obj = ResourceManager.GetObject("HACMain-MapChillout", resourceCulture);
+                object obj = ResourceManager.GetObject("HACMain_MapChillout", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         internal static System.Drawing.Bitmap HACMain_MapChiron {
             get {
-                object obj = ResourceManager.GetObject("HACMain-MapChiron", resourceCulture);
+                object obj = ResourceManager.GetObject("HACMain_MapChiron", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         internal static System.Drawing.Bitmap HACMain_MapDamnation {
             get {
-                object obj = ResourceManager.GetObject("HACMain-MapDamnation", resourceCulture);
+                object obj = ResourceManager.GetObject("HACMain_MapDamnation", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         internal static System.Drawing.Bitmap HACMain_MapDangercanyon {
             get {
-                object obj = ResourceManager.GetObject("HACMain-MapDangercanyon", resourceCulture);
+                object obj = ResourceManager.GetObject("HACMain_MapDangercanyon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         internal static System.Drawing.Bitmap HACMain_MapDeathisland {
             get {
-                object obj = ResourceManager.GetObject("HACMain-MapDeathisland", resourceCulture);
+                object obj = ResourceManager.GetObject("HACMain_MapDeathisland", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         internal static System.Drawing.Bitmap HACMain_MapDerelict {
             get {
-                object obj = ResourceManager.GetObject("HACMain-MapDerelict", resourceCulture);
+                object obj = ResourceManager.GetObject("HACMain_MapDerelict", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         internal static System.Drawing.Bitmap HACMain_MapGephyrophobia {
             get {
-                object obj = ResourceManager.GetObject("HACMain-MapGephyrophobia", resourceCulture);
+                object obj = ResourceManager.GetObject("HACMain_MapGephyrophobia", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         internal static System.Drawing.Bitmap HACMain_MapHangemhigh {
             get {
-                object obj = ResourceManager.GetObject("HACMain-MapHangemhigh", resourceCulture);
+                object obj = ResourceManager.GetObject("HACMain_MapHangemhigh", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         internal static System.Drawing.Bitmap HACMain_MapIceFields {
             get {
-                object obj = ResourceManager.GetObject("HACMain-MapIceFields", resourceCulture);
+                object obj = ResourceManager.GetObject("HACMain_MapIceFields", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         internal static System.Drawing.Bitmap HACMain_MapInfinity {
             get {
-                object obj = ResourceManager.GetObject("HACMain-MapInfinity", resourceCulture);
+                object obj = ResourceManager.GetObject("HACMain_MapInfinity", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         internal static System.Drawing.Bitmap HACMain_MapLongest {
             get {
-                object obj = ResourceManager.GetObject("HACMain-MapLongest", resourceCulture);
+                object obj = ResourceManager.GetObject("HACMain_MapLongest", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         internal static System.Drawing.Bitmap HACMain_MapPrisoner {
             get {
-                object obj = ResourceManager.GetObject("HACMain-MapPrisoner", resourceCulture);
+                object obj = ResourceManager.GetObject("HACMain_MapPrisoner", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         internal static System.Drawing.Bitmap HACMain_MapRatrace {
             get {
-                object obj = ResourceManager.GetObject("HACMain-MapRatrace", resourceCulture);
+                object obj = ResourceManager.GetObject("HACMain_MapRatrace", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         internal static System.Drawing.Bitmap HACMain_MapSidewinder {
             get {
-                object obj = ResourceManager.GetObject("HACMain-MapSidewinder", resourceCulture);
+                object obj = ResourceManager.GetObject("HACMain_MapSidewinder", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         internal static System.Drawing.Bitmap HACMain_MapTimberland {
             get {
-                object obj = ResourceManager.GetObject("HACMain-MapTimberland", resourceCulture);
+                object obj = ResourceManager.GetObject("HACMain_MapTimberland", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         internal static System.Drawing.Bitmap HACMain_MapWizard {
             get {
-                object obj = ResourceManager.GetObject("HACMain-MapWizard", resourceCulture);
+                object obj = ResourceManager.GetObject("HACMain_MapWizard", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         internal static System.Drawing.Bitmap HACMain_MenuChat {
             get {
-                object obj = ResourceManager.GetObject("HACMain-MenuChat", resourceCulture);
+                object obj = ResourceManager.GetObject("HACMain_MenuChat", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         internal static System.Drawing.Bitmap HACMain_MenuChatH {
             get {
-                object obj = ResourceManager.GetObject("HACMain-MenuChatH", resourceCulture);
+                object obj = ResourceManager.GetObject("HACMain_MenuChatH", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         internal static System.Drawing.Bitmap HACMain_MenuChatI {
             get {
-                object obj = ResourceManager.GetObject("HACMain-MenuChatI", resourceCulture);
+                object obj = ResourceManager.GetObject("HACMain_MenuChatI", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         internal static System.Drawing.Bitmap HACMain_MenuHome {
             get {
-                object obj = ResourceManager.GetObject("HACMain-MenuHome", resourceCulture);
+                object obj = ResourceManager.GetObject("HACMain_MenuHome", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         internal static System.Drawing.Bitmap HACMain_MenuHomeH {
             get {
-                object obj = ResourceManager.GetObject("HACMain-MenuHomeH", resourceCulture);
+                object obj = ResourceManager.GetObject("HACMain_MenuHomeH", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         internal static System.Drawing.Bitmap HACMain_MenuHomeI {
             get {
-                object obj = ResourceManager.GetObject("HACMain-MenuHomeI", resourceCulture);
+                object obj = ResourceManager.GetObject("HACMain_MenuHomeI", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         internal static System.Drawing.Bitmap HACMain_MenuServers {
             get {
-                object obj = ResourceManager.GetObject("HACMain-MenuServers", resourceCulture);
+                object obj = ResourceManager.GetObject("HACMain_MenuServers", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         internal static System.Drawing.Bitmap HACMain_MenuServersH {
             get {
-                object obj = ResourceManager.GetObject("HACMain-MenuServersH", resourceCulture);
+                object obj = ResourceManager.GetObject("HACMain_MenuServersH", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         internal static System.Drawing.Bitmap HACMain_MenuServersI {
             get {
-                object obj = ResourceManager.GetObject("HACMain-MenuServersI", resourceCulture);
+                object obj = ResourceManager.GetObject("HACMain_MenuServersI", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -350,6 +350,13 @@ namespace HAC2Beta2.Properties {
         internal static System.Drawing.Bitmap HACValidate_FrontProg {
             get {
                 object obj = ResourceManager.GetObject("HACValidate_FrontProg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Lock {
+            get {
+                object obj = ResourceManager.GetObject("Lock", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

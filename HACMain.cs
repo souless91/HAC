@@ -57,7 +57,7 @@ namespace HAC2Beta2
         // Total player count - acquired from querying servers in the master list
         private int playercounter = 0;
 
-        private Boolean UpdatingProcessing = false;
+        private Boolean Error1 = false;
 
         // Improved custom window handle (moving form around screen)
         public const int WM_NCLBUTTONDOWN = 0xA1;
@@ -330,33 +330,12 @@ namespace HAC2Beta2
         }
 
 
-        private void QuickServerBrowser_Click(object sender, EventArgs e)
-        {
-            if (UpdatingProcessing) return;
-            UpdatingProcessing = true;
-            // Update Server Information in new thread
-            Thread t = new Thread(new ThreadStart(UpdateServer));
-            t.Start();
-        }
+
         
         private void SearchButton_Click(object sender, EventArgs e)
         {
-            // Clear Search Filter
             Filters.Remove("Custom");
-            if (SearchTextBox.Text == "")
-            {
-                MessageBox.Show("Search for something!");
-                SearchTextBox.Focus();
-                return;
-            }
-            else
-            {
-                // Add search Filter - and show message if query is empty
-                Filters.Add("Custom", SearchTextBox.Text);
-
-                //QuickServerBrowser.ModelFilter = new TextMatchFilter(QuickServerBrowser, SearchTextBox.Text);
-            }
-            // Update the List
+            Filters.Add("Custom", SearchTextBox.Text);
             UpdateFilters();
         }
 
@@ -400,8 +379,6 @@ namespace HAC2Beta2
                         break;
                 }
             }
-            // Update the List
-            UpdateFilters();
         }
 
         private void GametypeCombo_changeIndex(object sender, EventArgs e)
@@ -413,8 +390,6 @@ namespace HAC2Beta2
                 // Add Gametype Filter - as long as "ANY Gametype" is not selected
                 Filters.Add("Gametype", GametypeCombo.SelectedText);
             }
-            // Update the List
-            UpdateFilters();
         }
 
         private void MapCombo_changeIndex(object sender, EventArgs e)
@@ -426,8 +401,13 @@ namespace HAC2Beta2
                 // Add Map Filter - as long as "ANY Map" is not selected
                 Filters.Add("Map", MapCombo.SelectedText);
             }
-            // Update the List
-            UpdateFilters();
+        }
+
+        private void ServerBrowserList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (Error1) return;
+            if (ServerBrowserList.SelectedItems.Count != 1) return;
+            UpdateServer();
         }
 
         private void ResetSearch_Click(object sender, EventArgs e)
@@ -436,73 +416,14 @@ namespace HAC2Beta2
             VersionCombo.SelectedIndex = 0;
             GametypeCombo.SelectedIndex = 0;
             MapCombo.SelectedIndex = 0;
-            //QuickServerBrowser.ModelFilter = null;
         }
 
         #endregion
 
         #region Beautiful Code
-        private void LoadServers()
-        {
-            WarningLabel.Text = "Acquiring server list information...";
-
-            Process p = new Process();
-            p.StartInfo.UseShellExecute = false;
-            p.StartInfo.RedirectStandardOutput = true;
-            System.IO.Directory.SetCurrentDirectory(System.IO.Path.GetDirectoryName(Application.ExecutablePath));
-            p.StartInfo.FileName = "gslist.exe";
-            p.StartInfo.Arguments = " -X \\hostname\\gamevariant\\gametype\\numplayers\\maxplayers\\mapname\\password\\gamever -n halor";
-            p.StartInfo.CreateNoWindow = true;
-            p.Start();
-            string output = p.StandardOutput.ReadToEnd();
-            p.WaitForExit();
-            string[] ResultServers = output.Split('\n');
-            for (int i = 0; i < ResultServers.Length; i++)
-            {
-                string[] parseMe = ResultServers[i].Split('\\');
-                if (parseMe.Length > 15 && parseMe[8] != "" && parseMe[4] != "")
-                {
-                    Server temp = new Server();
-                    temp.addr = parseMe[0].Substring(0, parseMe[0].Length - 1).Replace(' ', ':');
-                    temp.Name = parseMe[2].Replace((char)(byte)1, '\b');
-                    temp.Map = parseMe[12];
-                    temp.GameName = parseMe[4];
-                    temp.Gametype = parseMe[6];
-                    temp.AspectGametype = parseMe[6] + " - " + parseMe[4];
-                    temp.MaxPlayers = parseMe[10];
-                    temp.AspectPlayers = parseMe[8] + " / " + parseMe[10];
-                    temp.pass = parseMe[14].Substring(0, 1);
-                    temp.Version = parseMe[16];
-                    playercounter += Convert.ToInt32(parseMe[8]+" ");
-                    Servers[temp.addr] = temp;
-                    GlacialComponents.Controls.GLItem someitem = QuickServerBrowser.Items.Add("");
-                    someitem.SubItems[0].Text = temp.pass;
-                    someitem.SubItems[1].Text = temp.Name;
-                    someitem.SubItems[2].Text = temp.Map;
-                    someitem.SubItems[3].Text = temp.AspectPlayers;
-                    someitem.SubItems[4].Text = temp.AspectGametype;
-                    //QuickServerBrowser.AddObject(Servers[temp.addr] as Server);
-                }
-                PlayerCount.Text = playercounter + "";
-                ServerCount.Text = i + "";
-            }
-
-            WarningLabel.Text = "";
-        }
 
         /// <summary>
-        /// Modify arguments textbox with selected checkboxes
-        /// </summary>
-        /// <param name="command">Require command string to be changed from arguments</param>
-        /// <param name="sender">Must be trigged by event, so sender must be forwarded to this method</param>
-        private void HaloArguments(String command, object sender)
-        {
-            CheckBox obj = sender as CheckBox;
-            Arguments.Text = (obj.Checked) ? Arguments.Text + " " + command : Arguments.Text.Replace(" " + command, "").Replace(command, "");
-        }
-
-        /// <summary>
-        /// Souless powered Server Class Object
+        /// Powered by Souless - Server Class Object
         /// </summary>
         private class Server
         {
@@ -518,7 +439,6 @@ namespace HAC2Beta2
             public string Version;
             public string AspectPlayers;
             public string AspectGametype;
-            public Image AspectPassword;
 
             public Server()
             {
@@ -529,7 +449,7 @@ namespace HAC2Beta2
             {
                 addr = address;
                 string[] arr = data.Split('\0');
-                pass = (data.Split('\0')[10] == "1") ? "P" : "";
+                pass = data.Split('\0')[10];
                 Name = ParseServerName(arr[2], 0);
                 MaxPlayers = arr[8];
                 Map = arr[12];
@@ -546,8 +466,8 @@ namespace HAC2Beta2
                     Players[i][2] = arr[loc]; loc++;
                     Players[i][3] = arr[loc]; loc++;
                 }
-                AspectPlayers = (Players.Length < 10) ? "0" + Players.Length : Players + "";
-                AspectPlayers +=  (MaxPlayers.Length < 10) ? " / 0" + MaxPlayers : " / "+ MaxPlayers;
+                AspectPlayers = (Players.Length < 10) ? "0" + Players.Length : Players.Length + "";
+                AspectPlayers += (Convert.ToInt32(MaxPlayers) < 10) ? " / 0" + MaxPlayers : " / " + MaxPlayers;
                 AspectGametype = Gametype + " - " + GameName;
             }
             public string GetVar(string something)
@@ -582,7 +502,14 @@ namespace HAC2Beta2
                         return "";
                 }
             }
-
+            public Boolean FitsFilters(Hashtable Filters)
+            {
+                foreach (DictionaryEntry category in Filters)
+                {
+                    MessageBox.Show(category.Value+"");
+                }
+                return false;
+            }
             public Boolean Find(string query)
             {
                 if (0 <= Name.IndexOf(query, StringComparison.InvariantCultureIgnoreCase)) return true;
@@ -601,7 +528,7 @@ namespace HAC2Beta2
                 return false;
             }
 
-            private string ParseServerName(string servername, int white)
+            public string ParseServerName(string servername, int white)
             {
                 string newname = "";
                 for (int i = 0; i < servername.Length; i++)
@@ -622,27 +549,97 @@ namespace HAC2Beta2
             }
         }
 
+        private void LoadServers()
+        {
+            WarningLabel.Text = "Acquiring server list information...";
+
+            Process p = new Process();
+            p.StartInfo.UseShellExecute = false;
+            p.StartInfo.RedirectStandardOutput = true;
+            System.IO.Directory.SetCurrentDirectory(System.IO.Path.GetDirectoryName(Application.ExecutablePath));
+            p.StartInfo.FileName = "gslist.exe";
+            p.StartInfo.Arguments = " -X \\hostname\\gamevariant\\gametype\\numplayers\\maxplayers\\mapname\\password\\gamever -n halor";
+            p.StartInfo.CreateNoWindow = true;
+            p.Start();
+            string output = p.StandardOutput.ReadToEnd();
+            p.WaitForExit();
+            if (!output.Contains(@"Error: ") && output.Length>20)
+            {
+                string[] ResultServers = output.Split('\n');
+                for (int i = 0; i < ResultServers.Length; i++)
+                {
+                    string[] parseMe = ResultServers[i].Split('\\');
+                    if (parseMe.Length > 15 && parseMe[8] != "" && parseMe[4] != "")
+                    {
+                        Server temp = new Server();
+                        temp.addr = parseMe[0].Substring(0, parseMe[0].Length - 1).Replace(' ', ':');
+                        temp.Name = temp.ParseServerName(parseMe[2],0);
+                        temp.Map = parseMe[12];
+                        temp.GameName = parseMe[4];
+                        temp.Gametype = parseMe[6];
+                        temp.AspectGametype = parseMe[6] + " - " + parseMe[4];
+                        temp.MaxPlayers = parseMe[10];
+                        temp.AspectPlayers = parseMe[8] + " / " + parseMe[10];
+                        temp.AspectPlayers = (Convert.ToInt32(parseMe[8]) < 10) ? "0" + parseMe[8] : parseMe[8] + "";
+                        temp.AspectPlayers += (Convert.ToInt32(parseMe[10]) < 10) ? " / 0" + parseMe[10] : " / " + parseMe[10];
+
+                        temp.pass = parseMe[14].Substring(0, 1);
+                        temp.Version = parseMe[16];
+                        playercounter += Convert.ToInt32(parseMe[8] + " ");
+                        Servers[temp.addr] = temp;
+                        ServerBrowserList.AddObject(Servers[temp.addr]);
+                    }
+                    PlayerCount.Text = playercounter + "";
+                    ServerCount.Text = i + "";
+                }
+                
+                WarningLabel.Text = "";
+            }
+            else
+            {
+                Error1 = true;
+                WarningLabel.Text = "Error trying to get masterlist!";
+            }
+        }
+
+        /// <summary>
+        /// Modify arguments textbox with selected checkboxes
+        /// </summary>
+        /// <param name="command">Require command string to be changed from arguments</param>
+        /// <param name="sender">Must be trigged by event, so sender must be forwarded to this method</param>
+        private void HaloArguments(String command, object sender)
+        {
+            CheckBox obj = sender as CheckBox;
+            Arguments.Text = (obj.Checked) ? Arguments.Text + " " + command : Arguments.Text.Replace(" " + command, "").Replace(command, "");
+        }
+
         /// <summary>
         /// Filters the QuickServerBrowser to required filters
         /// </summary>
         private void UpdateFilters()
         {
-            if (Filters.Count < 1)
+            IDictionaryEnumerator _enumerator = Servers.GetEnumerator();
+            while (_enumerator.MoveNext())
             {
-                // If all filters are removed, or not set, then clear filters (show everything)
-                //QuickServerBrowser.ModelFilter = null;
-            }
-            else
-            {
-                // A delegated method that returns true/false, a custom filter we can write
+                Server temp = _enumerator.Value as Server;
+                if (temp.FitsFilters(Filters))
+                {
+                    /*GlacialComponents.Controls.GLItem currentNode = QuickServerBrowser.Items.Add("");
+                    currentNode.SubItems[1].Control = new PictureBox();
+                    if (temp.pass == "1")
+                        currentNode.SubItems[1].Control.BackgroundImage = Properties.Resources.Lock;
+                    currentNode.SubItems[1].Control.BackgroundImageLayout = ImageLayout.None;
+                    currentNode.SubItems[1].Text = temp.pass;
+                    currentNode.SubItems[2].Text = temp.Name;
+                    currentNode.SubItems[3].Text = temp.Map;
+                    currentNode.SubItems[4].Text = temp.AspectPlayers;
+                    currentNode.SubItems[5].Text = temp.AspectGametype;*/
+                }
             }
         }
         private System.Net.IPEndPoint StringToEndPoint(string ipport)
         {
-            // split ip:port
             string[] addrparts = ipport.Split(':');
-
-            // return an IPAddress
             return new System.Net.IPEndPoint(System.Net.IPAddress.Parse(addrparts[0]), Convert.ToInt32(addrparts[1]));
         }
 
@@ -651,29 +648,24 @@ namespace HAC2Beta2
         /// </summary>
         private void UpdateServer()
         {
-            if (UpdatingProcessing==false) return; 
-           // if (QuickServerBrowser.SelectedIndices.Count != 1) return;
-
             NameDetail.Text = "Loading...";
             NameDetail.Visible = true;
-            PlayersDetail.Visible = true;
-            GameNameDetail.Visible = true;
-            VersionDetail.Visible = true;
 
             UdpClient udp = new UdpClient();
 
             // This is the data you send to a halo server - the query string
             byte[] sendBytes4 = { 254, 253, 0, 119, 106, 157, 157, 255, 255, 255, 255 };
 
-            // Borrow the Gamespy's StringToEndPoint method and convert our address to an EndPoint
-            System.Net.IPEndPoint ipaddress = StringToEndPoint(/*QuickServerBrowser.Items[QuickServerBrowser.SelectedIndices[0]].Text*/"");
+            // Convert our address to an EndPoint
+            System.Net.IPEndPoint ipaddress = StringToEndPoint(ServerBrowserList.SelectedItem.Text);
 
             // Send Data
             udp.Send(sendBytes4, sendBytes4.Length, ipaddress);
 
-            // Recieve Data
-            byte[] receiveBytes = udp.Receive(ref ipaddress);
-
+            // Recieve Data with TTL
+            var asyncResult = udp.BeginReceive(null, null);
+            asyncResult.AsyncWaitHandle.WaitOne(500);
+            byte[] receiveBytes = udp.EndReceive(asyncResult, ref ipaddress);
             // Make it readable
             string returnData = Encoding.ASCII.GetString(receiveBytes, 0, receiveBytes.Length);
 
@@ -683,7 +675,6 @@ namespace HAC2Beta2
                 // Since there is no real "Update" method for Lists - we must remove and add them manually
                 Server temp = new Server(ipaddress.ToString(), returnData);
                 Servers[ipaddress.ToString()] = temp;
-               // QuickServerBrowser.RefreshObject(Servers[ipaddress.ToString()] as Server);
 
                 // Update server details
                 MapPicture.Image = MapPictures[temp.Map.ToLower()] as Bitmap;
@@ -692,8 +683,20 @@ namespace HAC2Beta2
                 GamenameTxt.Text = temp.Gametype + " - " + temp.GameName;
                 PlayersTxt.Text = temp.Players.Length + "/" + temp.MaxPlayers;
                 VersionTxt.Text = temp.Version;
+                NameDetail.Text = "Name";
+                PlayersDetail.Visible = true;
+                GameNameDetail.Visible = true;
+                VersionDetail.Visible = true;
+                
+                ServerBrowserList.SelectedItem.SubItems[0].Text = temp.addr;
+                ServerBrowserList.SelectedItem.SubItems[1].Text = temp.pass;
+                ServerBrowserList.SelectedItem.SubItems[2].Text = temp.Name;
+                ServerBrowserList.SelectedItem.SubItems[3].Text = temp.Map;
+                ServerBrowserList.SelectedItem.SubItems[4].Text = temp.AspectPlayers;
+                ServerBrowserList.SelectedItem.SubItems[5].Text = temp.AspectGametype;
+                ServerBrowserList.SelectedItem.SubItems[6].Text = temp.Version;
             }
-            UpdatingProcessing = false;
+            
             udp.Close();
         }
         #endregion

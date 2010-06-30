@@ -10,10 +10,3 @@ C:\Users\souless\Documents\Works\C#\HAC2Beta2\HAC2Beta2\bin\Debug\Halo Anticheat
 C:\Users\souless\Documents\Works\C#\HAC2Beta2\HAC2Beta2\bin\Debug\Halo Anticheat.pdb
 C:\Users\souless\Documents\Works\C#\HAC2Beta2\HAC2Beta2\obj\Debug\Halo Anticheat.exe
 C:\Users\souless\Documents\Works\C#\HAC2Beta2\HAC2Beta2\obj\Debug\Halo Anticheat.pdb
-C:\Users\souless\Documents\Works\C#\HAC2Beta2\HAC2Beta2\obj\Debug\GlacialComponents.Controls.BorderStrip.resources
-C:\Users\souless\Documents\Works\C#\HAC2Beta2\HAC2Beta2\obj\Debug\GlacialComponents.Controls.GlacialList.resources
-C:\Users\souless\Documents\Works\C#\HAC2Beta2\HAC2Beta2\obj\Debug\GlacialComponents.Controls.GLComboBox.resources
-C:\Users\souless\Documents\Works\C#\HAC2Beta2\HAC2Beta2\obj\Debug\GlacialComponents.Controls.GLDateTimePicker.resources
-C:\Users\souless\Documents\Works\C#\HAC2Beta2\HAC2Beta2\obj\Debug\GlacialComponents.Controls.GLTextBox.resources
-C:\Users\souless\Documents\Works\C#\HAC2Beta2\HAC2Beta2\obj\Debug\GlacialComponents.Controls.ManagedHScrollBar.resources
-C:\Users\souless\Documents\Works\C#\HAC2Beta2\HAC2Beta2\obj\Debug\GlacialComponents.Controls.ManagedVScrollBar.resources

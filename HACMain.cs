@@ -45,7 +45,7 @@ namespace HAC2Beta2
         // Collection of gametype pictures for server browsing
         private Hashtable GTPictures = new Hashtable();
 
-        // Collection of servers - filled up by Gamespy master list and pushed to QuickServerBrowser
+        // Collection of servers - filled up by Gamespy master list and pushed to ServerBrowserList
         private Hashtable Servers = new Hashtable();
 
         // Current Tab
@@ -126,7 +126,7 @@ namespace HAC2Beta2
 
             WindowTitle.Text = Text;
 
-            // Initialize QuickServerBrowser in new thread
+            // Initialize ServerBrowserList in new thread
             Thread t = new Thread(new ThreadStart(LoadServers));
             t.Start();
 
@@ -549,6 +549,9 @@ namespace HAC2Beta2
             }
         }
 
+        /// <summary>
+        /// Parses GSList response and loads server browser
+        /// </summary>
         private void LoadServers()
         {
             WarningLabel.Text = "Acquiring server list information...";
@@ -614,28 +617,11 @@ namespace HAC2Beta2
         }
 
         /// <summary>
-        /// Filters the QuickServerBrowser to required filters
+        /// Filters the ServerBrowserList to required filters
         /// </summary>
         private void UpdateFilters()
         {
-            IDictionaryEnumerator _enumerator = Servers.GetEnumerator();
-            while (_enumerator.MoveNext())
-            {
-                Server temp = _enumerator.Value as Server;
-                if (temp.FitsFilters(Filters))
-                {
-                    /*GlacialComponents.Controls.GLItem currentNode = QuickServerBrowser.Items.Add("");
-                    currentNode.SubItems[1].Control = new PictureBox();
-                    if (temp.pass == "1")
-                        currentNode.SubItems[1].Control.BackgroundImage = Properties.Resources.Lock;
-                    currentNode.SubItems[1].Control.BackgroundImageLayout = ImageLayout.None;
-                    currentNode.SubItems[1].Text = temp.pass;
-                    currentNode.SubItems[2].Text = temp.Name;
-                    currentNode.SubItems[3].Text = temp.Map;
-                    currentNode.SubItems[4].Text = temp.AspectPlayers;
-                    currentNode.SubItems[5].Text = temp.AspectGametype;*/
-                }
-            }
+            //
         }
         private System.Net.IPEndPoint StringToEndPoint(string ipport)
         {
@@ -644,7 +630,7 @@ namespace HAC2Beta2
         }
 
         /// <summary>
-        /// Updates Server information - must have a single selected index in QuickServerBrowser
+        /// Updates Server information - must have a single selected index in ServerBrowserList
         /// </summary>
         private void UpdateServer()
         {
@@ -687,7 +673,6 @@ namespace HAC2Beta2
                 PlayersDetail.Visible = true;
                 GameNameDetail.Visible = true;
                 VersionDetail.Visible = true;
-                
                 ServerBrowserList.SelectedItem.SubItems[0].Text = temp.addr;
                 ServerBrowserList.SelectedItem.SubItems[1].Text = temp.pass;
                 ServerBrowserList.SelectedItem.SubItems[2].Text = temp.Name;

@@ -163,7 +163,7 @@ namespace HAC2Beta2
             // 
             this.MenuServers.Cursor = System.Windows.Forms.Cursors.Hand;
             this.MenuServers.Image = global::HAC2Beta2.Properties.Resources.HACMain_MenuServersI;
-            this.MenuServers.Location = new System.Drawing.Point(111, 38);
+            this.MenuServers.Location = new System.Drawing.Point(111, 40);
             this.MenuServers.Name = "MenuServers";
             this.MenuServers.Size = new System.Drawing.Size(103, 23);
             this.MenuServers.TabIndex = 19;
@@ -176,7 +176,7 @@ namespace HAC2Beta2
             // 
             this.MenuChat.Cursor = System.Windows.Forms.Cursors.Hand;
             this.MenuChat.Image = global::HAC2Beta2.Properties.Resources.HACMain_MenuChatI;
-            this.MenuChat.Location = new System.Drawing.Point(213, 38);
+            this.MenuChat.Location = new System.Drawing.Point(213, 40);
             this.MenuChat.Name = "MenuChat";
             this.MenuChat.Size = new System.Drawing.Size(103, 23);
             this.MenuChat.TabIndex = 20;

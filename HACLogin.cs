@@ -20,6 +20,9 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using System.Web;
+using System.Net;
+using System.IO;
 
 namespace HAC2Beta2
 {
@@ -77,7 +80,44 @@ namespace HAC2Beta2
 
         private void ConnectButton_Click(object sender, EventArgs e)
         {
-            // Insert login verification code here + if/else statements to proceed
+            byte[] buffer = Encoding.ASCII.GetBytes("user="+textBox1.Text+"&pass="+textBox2.Text);
+
+            HttpWebRequest WebReq = (HttpWebRequest)WebRequest.Create("http://souless.me/hac/login.php");
+
+            WebReq.Method = "POST";
+
+            WebReq.ContentType = "application/x-www-form-urlencoded";
+
+            WebReq.ContentLength = buffer.Length;
+
+            Stream PostData = WebReq.GetRequestStream();
+
+            PostData.Write(buffer, 0, buffer.Length);
+            PostData.Close();
+
+            HttpWebResponse WebResp = (HttpWebResponse)WebReq.GetResponse();
+
+            Stream Answer = WebResp.GetResponseStream();
+            StreamReader _Answer = new StreamReader(Answer);
+            string responseString =  _Answer.ReadToEnd();
+
+            switch (responseString)
+            {
+                case "0":
+                    break;
+                case "-1":
+                    MessageBox.Show("User not found,\ndid you register for HAC?");
+                    return;
+                case "-2":
+                    MessageBox.Show("Incorrect Password,\ndid you forget your password?");
+                    return;
+                case "-3":
+                    MessageBox.Show("Please complete required fields");
+                    return;
+                default:
+                    MessageBox.Show("Fatal Server Error - contact server admin");
+                    return;
+            }
 
             // Get next form without ugly Form hiding / Form dialoging
             System.Threading.Thread t = new System.Threading.Thread(new System.Threading.ThreadStart(RunHACValidate));
